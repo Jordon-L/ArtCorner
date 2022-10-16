@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!--Social Media Display-->
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v1"
+    />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/root.css" />
+    <link rel="stylesheet" href="src/css/local.css" />
+    <link rel="stylesheet" href="src/css/critical.css" />
+
+    <title>Title | Business | Location, WA</title>
+  </head>
+
+  <body>
+    <!--Screen reader skip main nav-->
+    <a class="skip" aria-label="skip to main content" href="#main"
+      >Click To Skip To Main Content</a
+    >
+
+    <!-- ============================================ -->
+    <!--                 Navigation                   -->
+    <!-- ============================================ -->
+
+    <div id="navigation">
+      <div aria-hidden="true" class="background-color-div">
+        <!--This div is used to overcome a z-index issue where the open
+                #navbar-menu is on top of the #navigation. This bar places itself 
+                the #navbar-menu so that menu appears behind the #navigation
+            -->
+      </div>
+      <div class="container">
+        <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
+        <a
+          class="logo"
+          aria-label="click to go to home page"
+          href="/index.html"
+        >
+          <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
+          <img
+            class="light"
+            aria-hidden="true"
+            src="src/images/logo.png"
+            decoding="async"
+            alt="logo"
+            width="221"
+            height="66"
+          />
+        </a>
+
+        <!--Main Nav-->
+        <nav id="navbar-menu">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">Gallery</a></li>
+            <li><a href="/about.html">Challenge</a></li>
+            <li><a href="/contact.html">Login</a></li>
+          </ul>
+        </nav>
+
+        <!--Mobile Nav toggle-->
+        <button class="hamburger-menu">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <main>
+      <!-- ============================================ -->
+      <!--                    LANDING                   -->
+      <!-- ============================================ -->
+
+      <section id="hero">
+        <div class="hero-content">
+          <div class="heroText">
+            <h1 id="home-h">
+              Showcase your portfolio
+            </h1>
+            <p>
+              Share, Socialize, Communities, Challenges
+            </p>
+            <a
+              class="button-solid"
+              href="/contact.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Create Account
+            </a>
+          </div>
+        </div>
+        <picture>
+          <source media="(max-width: 600px)" srcset="src/images/landing-m.jpg" />
+          <source media="(min-width: 601px)" srcset="src/images/landing.jpg" />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="src/images/landing.jpg"
+            alt="new home"
+          />
+        </picture>
+      </section>
+    </main>
+    <script defer src="/nav.js"></script>
+  </body>
+</html>
