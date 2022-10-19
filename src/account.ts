@@ -20,11 +20,10 @@ export function setupPocketbase() {
     if (email != null && password != null && passwordConfirm != null) {
       // create user
       const user = await client.users.create({
-        email: email,
-        password: password,
-        passwordConfirm: passwordConfirm,
+        email: email.value,
+        password: password.value,
+        passwordConfirm: passwordConfirm.value,
       });
-
       if(user.profile == null){
         return;
       }
