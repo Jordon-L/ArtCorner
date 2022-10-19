@@ -7,6 +7,9 @@
     display: grid;
     width: 18.75em;
   }
+  .login .card #message {
+    height: 3.75em;
+  }
   .login .input-group {
     display: grid;
     margin-bottom: 0.625em;
