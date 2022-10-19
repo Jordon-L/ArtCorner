@@ -29,7 +29,7 @@ export function setupPocketbase() {
         return;
       }
       // set user profile data
-      const updatedProfile = await client.records.update(
+      await client.records.update(
         "profiles",
         user.profile.id,
         {
