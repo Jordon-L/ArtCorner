@@ -5,7 +5,7 @@ export function setupPocketbase() {
   if (createButton == undefined) {
     return;
   }
-  const client = new PocketBase("http://www.pocketbase.jordonlee.com");
+  const client = new PocketBase("https://www.pocketbase.jordonlee.com");
   createButton.addEventListener("click", async (e) => {
     e.preventDefault();
 
