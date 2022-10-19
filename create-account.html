@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="src/css/root.css" />
     <link rel="stylesheet" href="src/css/local.css" />
     <link rel="stylesheet" href="src/css/critical.css" />
+    <link rel="stylesheet" href="src/css/login.css" />
 
     <title>Art Corner | Home</title>
   </head>
@@ -92,48 +93,43 @@
     </div>
 
     <main>
-      <!-- ============================================ -->
-      <!--                    LANDING                   -->
-      <!-- ============================================ -->
-
-      <section id="hero">
-        <div class="hero-content">
-          <div class="heroText">
-            <h1 id="home-h">
-              Showcase your portfolio
-            </h1>
-            <p>
-              Share, Socialize, Communities, Challenges
-            </p>
-            <a
-              class="button-solid"
-              href="/create-account.html"
-              target="_blank"
-              rel="noopener"
-            >
-              Create Account
-            </a>
+      <section id="int-hero" class="login">
+        <div class="card">
+        <h2>Create Account</h2>
+        <form id="form" method="post">
+          <div class="input-group">
+            <label for:="username">Email</label>
+            <div class=input-box>
+              <input id="email" aria-label="email" class="input-field" name="email" placeholder="Email" type="text" tabindex="1" required>
+            </div>
           </div>
+          <div class="input-group">
+            <label for:="password">Password</label>
+            <input id="password" aria-label="password" class="input-field" name="password" placeholder="Password" type="password" tabindex="1" required>
+          </div>
+          <div class="input-group">
+            <label for:="passwordConfirm">Confirm Password</label>
+            <input id="passwordConfirm" aria-label="passwordConfirm" class="input-field" name="passwordConfirm" placeholder="Confirm Password" type="password" tabindex="1" required>
+          </div>
+          <p class="form-submit">
+            <button name="submit" type="submit" id="create-submit" class="button-solid" data-submit="...Sending">Create</button>
+          </p>
+          <small><a>Click</a></small>
+        </form>
         </div>
         <picture>
-          <source media="(max-width: 600px)" srcset="src/images/landing-m.jpg" />
-          <source media="(min-width: 601px)" srcset="src/images/landing.jpg" />
+          <source media="(max-width: 600px)" srcset="src/images/login-m.jpg" />
+          <source media="(min-width: 601px)" srcset="src/images/login.jpg" />
           <img
             aria-hidden="true"
             decoding="async"
-            src="src/images/landing.jpg"
+            src="src/images/login.jpg"
             alt="new home"
           />
         </picture>
       </section>
-
-      <section class="trending">
-        <h2>Trending</h2>
-        <div class="gallery">
-
-        </div>
-      </section>
     </main>
     <script defer src="/nav.js"></script>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

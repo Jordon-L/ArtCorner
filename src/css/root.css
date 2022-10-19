@@ -493,7 +493,7 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-    min-height: 30vh;
+    min-height: 100vh;
     padding-top: 3.125em;
   }
   #int-hero:before {
@@ -544,6 +544,12 @@
     display: block;
     width: 96%;
   }
+  .login h2 {
+    color: #fff;
+  }
+  .login label {
+    color: #fff;
+  }
 }
 /* Tablet */
 @media only screen and (min-width: 48em) {
@@ -557,7 +563,6 @@
 /* Small Desktop */
 @media only screen and (min-width: 64em) {
   #int-hero {
-    min-height: 18.75em;
     height: auto;
     padding-top: 11.25em;
     padding-block-end: 6.25em;

@@ -99,7 +99,6 @@
   #hero {
     padding: 12.5em 0 31.25em 0;
     z-index: 1;
-    overflow: hidden;
   }
   #hero .hero-content {
     display: flex;
@@ -127,6 +126,9 @@
 <--- -------------------------- -*/
 /* Mobile */
 @media only screen and (min-width: 0em) {
+  .nav-margin {
+    margin-top: 6.25em;
+  }
   .trending .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
