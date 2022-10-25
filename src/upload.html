@@ -18,23 +18,23 @@
     <meta property="og:image:secure_url" content="" />
 
     <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicon-32x32.png?v1"
+      href="/favicons/favicon-32x32.png?v1"
     />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="src/css/root.css" />
-    <link rel="stylesheet" href="src/css/local.css" />
-    <link rel="stylesheet" href="src/css/critical.css" />
-    <link rel="stylesheet" href="src/css/login.css" />
+    <link rel="stylesheet" href="/css/root.css" />
+    <link rel="stylesheet" href="/css/local.css" />
+    <link rel="stylesheet" href="/css/critical.css" />
+    <link rel="stylesheet" href="/css/form.css" />
 
     <title>Art Corner | Home</title>
   </head>
@@ -67,7 +67,7 @@
           <img
             class="light"
             aria-hidden="true"
-            src="src/images/logo.png"
+            src="/images/logo.png"
             decoding="async"
             alt="logo"
             width="221"
@@ -81,7 +81,9 @@
             <li><a href="/index.html">Home</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
             <li><a href="/challenge.html">Challenge</a></li>
-            <li><a href="/login.html">Login</a></li>
+            <li><a id="upload-nav" href="/upload.html">Upload</a></li>
+            <li><a id="profile-nav" href="/profile.html">Profile</a></li>
+            <li><a id="login-nav" href="/login.html">Log in</a></li>
           </ul>
         </nav>
 
@@ -93,38 +95,32 @@
     </div>
 
     <main>
-      <section id="int-hero" class="login">
+
+      <section id="int-hero" class="form-input">
         <div class="card">
-        <h2>Log In</h2>
-        <form id="form" method="post">
-          <div class="input-group">
-            <label for:="username">Username</label>
-            <div class=input-box>
-              <input id="username" aria-label="username" class="input-field" name="username" placeholder="Username" type="text" tabindex="1" required>
+          <form id="form" method="post" encType="multipart/form-data">
+            <div class="input-group">
+              <label for:="title">Title</label>
+              <div class=input-box>
+                <input id="title" aria-label="title" class="input-field" name="title" placeholder="Title" type="text" tabindex="1" required pattern="[A-Za-z]{3,}" required>
+              </div>
             </div>
-          </div>
-          <div class="input-group">
-            <label for:="password">Password</label>
-            <input id="password" aria-label="password" class="input-field" name="password" placeholder="Password" type="password" tabindex="1" required>
-          </div>
-          <p class="form-submit">
-            <button name="submit" type="submit" id="login-submit" class="button-solid" data-submit="...Sending">Log In</button>
-          </p>
-          <small><a>Click</a></small>
-        </form>
+            <div class="input-group">
+              <label for:="summary">Summary</label>
+              <textarea id="summary" aria-label="summary" class="input-field" rows="10" >This is the default comment...</textarea>
+            </div>
+            <div class="input-group">
+              <label for="file" class="button-solid">Select Image</label>
+              <input id="file" aria-label="file" style="visibility:hidden" class="input-field" name="file" placeholder="file" type="file" accept="image/png, image/jpeg, image/jpg, image/gif" tabindex="1" required>
+            </div>
+            <button name="submit" type="submit" id="upload-submit" class="button-solid" data-submit="...Sending">Upload</button>
+          </form>
         </div>
-        <picture>
-          <source media="(max-width: 600px)" srcset="src/images/login-m.jpg" />
-          <source media="(min-width: 601px)" srcset="src/images/login.jpg" />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="src/images/login.jpg"
-            alt="new home"
-          />
-        </picture>
+        <div id="message"></div>
+      </div>
       </section>
     </main>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/typescript/main.ts"></script>
+    <script type="module" src="/typescript/upload.ts"></script>
   </body>
 </html>

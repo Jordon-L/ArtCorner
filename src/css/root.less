@@ -17,10 +17,10 @@
       margin: 0;
       padding: 0;
       font-size: 100%;
-      font-family: Verdana, Arial, sans-serif;
       color: var(--bodyText);
       overflow-x: hidden;
   }
+  body, input, textarea, button {font-family: Verdana, Arial, sans-serif;}
 
   *, *:before, *:after {
       margin: 0;
@@ -652,7 +652,7 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
 
-  #int-hero {
+  .int-hero {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -712,7 +712,6 @@
           margin: auto;
           margin-bottom: 30/18em;
           display: block;
-          width: 96%;
       }
   }  
 }
@@ -720,7 +719,7 @@
 /* Tablet */
 @media only screen and (min-width: 48em) {
 
-  #int-hero {
+  .int-hero {
       font-size: 16px;
 
       h1 {
@@ -732,7 +731,7 @@
 /* Small Desktop */
 @media only screen and (min-width: 64em) {
 
-  #int-hero {
+  .int-hero {
       height: auto;
       padding-top: 180/16em;
       padding-block-end: 100/16em;

@@ -14,9 +14,14 @@
     margin: 0;
     padding: 0;
     font-size: 100%;
-    font-family: Verdana, Arial, sans-serif;
     color: var(--bodyText);
     overflow-x: hidden;
+  }
+  body,
+  input,
+  textarea,
+  button {
+    font-family: Verdana, Arial, sans-serif;
   }
   *,
   *:before,
@@ -486,7 +491,7 @@
 <--- -------------------------- -*/
 /* Mobile */
 @media only screen and (min-width: 0em) {
-  #int-hero {
+  .int-hero {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,7 +501,7 @@
     min-height: 100vh;
     padding-top: 3.125em;
   }
-  #int-hero:before {
+  .int-hero:before {
     content: '';
     position: absolute;
     display: block;
@@ -508,7 +513,7 @@
     left: 0;
     z-index: -1;
   }
-  #int-hero picture {
+  .int-hero picture {
     position: absolute;
     top: 0;
     left: 0;
@@ -516,7 +521,7 @@
     width: 100%;
     z-index: -2;
   }
-  #int-hero picture img {
+  .int-hero picture img {
     position: absolute;
     top: 0;
     left: 0;
@@ -524,7 +529,7 @@
     width: 100%;
     object-fit: cover;
   }
-  #int-hero h1 {
+  .int-hero h1 {
     color: #fff;
     font-size: 2.13333333em;
     text-align: center;
@@ -535,34 +540,27 @@
     margin-top: 1.09375em;
     margin-bottom: 0.46875em;
   }
-  #int-hero p {
+  .int-hero p {
     color: #fff;
     text-align: center;
     max-width: 22.22222222em;
     margin: auto;
     margin-bottom: 1.66666667em;
     display: block;
-    width: 96%;
-  }
-  .login h2 {
-    color: #fff;
-  }
-  .login label {
-    color: #fff;
   }
 }
 /* Tablet */
 @media only screen and (min-width: 48em) {
-  #int-hero {
+  .int-hero {
     font-size: 16px;
   }
-  #int-hero h1 {
+  .int-hero h1 {
     font-size: 4em;
   }
 }
 /* Small Desktop */
 @media only screen and (min-width: 64em) {
-  #int-hero {
+  .int-hero {
     height: auto;
     padding-top: 11.25em;
     padding-block-end: 6.25em;

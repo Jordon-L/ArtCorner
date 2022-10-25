@@ -10,7 +10,7 @@
     <meta name="keywords" content="" />
 
     <!--Social Media Display-->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="Art Corner" />
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
@@ -18,22 +18,22 @@
     <meta property="og:image:secure_url" content="" />
 
     <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicon-32x32.png?v1"
+      href="/favicons/favicon-32x32.png?v1"
     />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="src/css/root.css" />
-    <link rel="stylesheet" href="src/css/local.css" />
-    <link rel="stylesheet" href="src/css/critical.css" />
+    <link rel="stylesheet" href="/css/root.css" />
+    <link rel="stylesheet" href="/css/local.css" />
+    <link rel="stylesheet" href="/css/critical.css" />
 
     <title>Art Corner | Home</title>
   </head>
@@ -66,7 +66,7 @@
           <img
             class="light"
             aria-hidden="true"
-            src="src/images/logo.png"
+            src="../images/logo.png"
             decoding="async"
             alt="logo"
             width="221"
@@ -80,7 +80,9 @@
             <li><a href="/index.html">Home</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
             <li><a href="/challenge.html">Challenge</a></li>
-            <li><a href="/login.html">Login</a></li>
+            <li><a id="upload-nav" href="/upload.html">Upload</a></li>
+            <li><a id="profile-nav" href="/profile.html">Profile</a></li>
+            <li><a id="login-nav" href="/login.html">Log in</a></li>
           </ul>
         </nav>
 
@@ -108,20 +110,18 @@
             <a
               class="button-solid"
               href="/create-account.html"
-              target="_blank"
-              rel="noopener"
             >
               Create Account
             </a>
           </div>
         </div>
         <picture>
-          <source media="(max-width: 600px)" srcset="src/images/landing-m.jpg" />
-          <source media="(min-width: 601px)" srcset="src/images/landing.jpg" />
+          <source media="(max-width: 600px)" srcset="/images/landing-m.jpg" />
+          <source media="(min-width: 601px)" srcset="/images/landing.jpg" />
           <img
             aria-hidden="true"
             decoding="async"
-            src="src/images/landing.jpg"
+            src="/images/landing.jpg"
             alt="new home"
           />
         </picture>
@@ -134,6 +134,7 @@
         </div>
       </section>
     </main>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/typescript/main.ts"></script>
+    <script type="module" src="/typescript/gallery.ts"></script>
   </body>
 </html>
