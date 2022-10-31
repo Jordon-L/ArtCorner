@@ -1,0 +1,88 @@
+@import "root.less";
+
+@media only screen and (min-width: 0em) {
+.form-input {
+    .card {
+      display:flex;
+      background: #fff;
+      height: 100%;
+      justify-content: center;
+    }
+    .drop-zone {
+      border-radius: var(--border-radius);
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      width: 306/16em;
+      height:500/16em;
+    }
+}
+#form {
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    .image-preview {
+      align-self: center;
+      height: 50%;
+      #myimage {
+        width: 100%;
+        max-width: 800/16em;
+        object-fit: contain;
+      }
+    }
+
+    .text-input {
+      padding:5/16em;
+      display: flex;
+      flex-direction: column;
+      input {
+        width: 100%;
+        height: 2em;
+        background: #f2f2f2;
+        padding: 0.375em 0.75em;
+      }
+      textarea {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        resize: none;
+        padding: 0.375em 0.75em;
+        background: #f2f2f2;
+      }
+    }
+  }
+  .last-step {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .none {
+    display: none;
+  }
+}
+
+}
+
+@media only screen and (min-width: 48em) {
+  .form-input {
+    .drop-zone {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 768/16em;
+      height:500/16em;
+    }
+}
+  #form{
+    .last-step {
+        flex-direction: row;
+    }
+    .image-preview {
+      #myimage{
+        height: 100%;
+        max-width: 400/16em;
+      }
+    }
+  }
+
+}

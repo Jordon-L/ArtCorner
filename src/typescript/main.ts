@@ -5,14 +5,21 @@ const client = new PocketBase("https://www.pocketbase.jordonlee.com");
 
 //check if logged in
 function loggedIn(){
-  const loginNav= document.getElementById("login-nav");
-  const uploadNav= document.getElementById("upload-nav");
-  const profileNav= document.getElementById("profile-nav");
+  const hero = document.getElementById("hero");
+  const trending = document.querySelector(".trending") as HTMLElement | null;
+
+  const loginNav = document.getElementById("login-nav");
+  const uploadNav = document.getElementById("upload-nav");
+  const profileNav = document.getElementById("profile-nav");
   if(loginNav == null || uploadNav == null || profileNav == null){
     return;
   }
   if(client.authStore.token.length != 0){
     loginNav.innerHTML = "Logout"
+    if(hero != null && trending != null){
+      hero.style.display = "none";
+      trending.style.paddingTop = "63px"; 
+    }
   }
 
   loginNav.addEventListener("click", async (e) => {

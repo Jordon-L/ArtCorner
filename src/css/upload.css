@@ -301,27 +301,6 @@
     opacity: 1;
     transform: translateY(0) rotateX(0);
   }
-  #bottom-navigation {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-    height: auto;
-    background: white;
-  }
-  #bottom-navigation #bottom-navbar-menu ul {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 0px;
-  }
-  #bottom-navigation #bottom-navbar-menu ul li {
-    padding: 12px;
-    list-style: none;
-  }
-  #bottom-navigation #bottom-navbar-menu ul li img {
-    width: 24px;
-  }
 }
 /* Dark Mode Mobile */
 @media only screen and (max-width: 1023px) {
@@ -671,5 +650,77 @@
 @media only screen and (min-width: 0em) {
   body.dark-mode #footer {
     background: #061623;
+  }
+}
+@media only screen and (min-width: 0em) {
+  .form-input .card {
+    display: flex;
+    background: #fff;
+    height: 100%;
+    justify-content: center;
+  }
+  .form-input .drop-zone {
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    width: 19.125em;
+    height: 31.25em;
+  }
+  #form .input-group {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  #form .input-group .image-preview {
+    align-self: center;
+    height: 50%;
+  }
+  #form .input-group .image-preview #myimage {
+    width: 100%;
+    max-width: 50em;
+    object-fit: contain;
+  }
+  #form .input-group .text-input {
+    padding: 0.3125em;
+    display: flex;
+    flex-direction: column;
+  }
+  #form .input-group .text-input input {
+    width: 100%;
+    height: 2em;
+    background: #f2f2f2;
+    padding: 0.375em 0.75em;
+  }
+  #form .input-group .text-input textarea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+    padding: 0.375em 0.75em;
+    background: #f2f2f2;
+  }
+  #form .last-step {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  #form .none {
+    display: none;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .form-input .drop-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48em;
+    height: 31.25em;
+  }
+  #form .last-step {
+    flex-direction: row;
+  }
+  #form .image-preview #myimage {
+    height: 100%;
+    max-width: 25em;
   }
 }

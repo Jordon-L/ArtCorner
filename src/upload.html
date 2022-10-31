@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="/css/local.css" />
     <link rel="stylesheet" href="/css/critical.css" />
     <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/upload.css" />
 
     <title>Art Corner | Home</title>
   </head>
@@ -80,7 +81,6 @@
           <ul>
             <li><a href="/index.html">Home</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
-            <li><a href="/challenge.html">Challenge</a></li>
             <li><a id="upload-nav" href="/upload.html">Upload</a></li>
             <li><a id="profile-nav" href="/profile.html">Profile</a></li>
             <li><a id="login-nav" href="/login.html">Log in</a></li>
@@ -96,26 +96,27 @@
 
     <main>
 
-      <section id="int-hero" class="form-input">
-        <div class="card">
+      <section class="int-hero form-input">
           <form id="form" method="post" encType="multipart/form-data">
-            <div class="input-group">
-              <label for:="title">Title</label>
-              <div class=input-box>
-                <input id="title" aria-label="title" class="input-field" name="title" placeholder="Title" type="text" tabindex="1" required pattern="[A-Za-z]{3,}" required>
+            <div class="input-group drop-zone">
+              <img src = "icons/image-add.svg" alt="image-add"/>
+              <label>Drag and drop image</label>
+              <input id="file" aria-label="file" style="visibility:hidden" class="input-field" name="file" placeholder="file" type="file" accept="image/png, image/jpeg, image/jpg, image/gif" tabindex="1" required>
+              <label for="file" class="button-solid">Select from computer</label>
+            </div>
+            <div class="input-group none last-step">
+              <div class="image-preview">
+                <img id="myimage">
+              </div>
+              <div class="text-input">
+                <div class=input-box>
+                  <input id="title" aria-label="title" class="input-field" name="title" placeholder="Title" type="text" tabindex="1" required pattern="[A-Za-z]{3,}" required>
+                </div>
+                <textarea id="summary" aria-label="summary" class="input-field" rows="8" placeholder="Write a caption"></textarea>
+                <button name="submit" type="submit" id="upload-submit" class="button-solid" data-submit="...Sending">Upload</button>
               </div>
             </div>
-            <div class="input-group">
-              <label for:="summary">Summary</label>
-              <textarea id="summary" aria-label="summary" class="input-field" rows="10" >This is the default comment...</textarea>
-            </div>
-            <div class="input-group">
-              <label for="file" class="button-solid">Select Image</label>
-              <input id="file" aria-label="file" style="visibility:hidden" class="input-field" name="file" placeholder="file" type="file" accept="image/png, image/jpeg, image/jpg, image/gif" tabindex="1" required>
-            </div>
-            <button name="submit" type="submit" id="upload-submit" class="button-solid" data-submit="...Sending">Upload</button>
           </form>
-        </div>
         <div id="message"></div>
       </div>
       </section>

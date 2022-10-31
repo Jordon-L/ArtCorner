@@ -32,12 +32,6 @@
     background: #f2f2f2;
     padding: 0.375em 0.75em;
   }
-  .form-input .card .card-right .input-group textarea {
-    font-family: Verdana, Arial, sans-serif;
-    width: 100%;
-    background: #f2f2f2;
-    padding: 0.375em 0.75em;
-  }
   .form-input .card .card-right .input-group label {
     font-size: 12px;
     margin-bottom: 0.16666667em;
@@ -101,6 +95,7 @@
 @media only screen and (max-width: 48em) {
   .form-input .card {
     width: 100%;
+    justify-content: center;
   }
   .form-input .card .card-left {
     display: none;

@@ -11,6 +11,7 @@
       --primaryShade: #ffd675;
       --primaryDark: #805d0d;
       --bodyText: #1a1a1a;
+      --border-radius : 6px;
   }
   
   body, html {
@@ -134,7 +135,7 @@
 <--- -------------------------- -*/
 
 /* Mobile - Top Drop Down */
-@media only screen and (max-width: 1023px) {
+@media only screen and (min-width: 0em) {
 
   //Navigation Styles
   #navigation {
@@ -183,7 +184,6 @@
       // Hamburger Menu Default State
       .hamburger-menu {
           position: absolute;
-          right: 0/16em;
           border: none;
           height: 48/16em;
           width: 48/16em;
@@ -262,15 +262,15 @@
       // Navbar Menu Default State
       #navbar-menu {
           position: fixed;
-          right: 0;
-          padding: 0;
-          width: 100%;
+          left: 0;
+          padding-left: 18/16em;
+          padding-right: 18/16em;
           border-radius: 0 0 6/16em 6/16em;
           z-index: -1;
           overflow: hidden;
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
           background-color: #f8f8f8;
-          top: 64/16em; // same as #navigation height
+          top: 63/16em; // same as #navigation height
 
           //Transition Properties
           padding-top: 0;
@@ -341,7 +341,7 @@
       // Navbar Menu Open State
       #navbar-menu.open {
           height: 306/16em;
-          padding-top: 20/16em;
+          padding-top: 18/16em;
           z-index: -100;
 
           ul {
@@ -352,202 +352,34 @@
           }
       }
   }
-}
 
-/* Desktop */
-@media only screen and (min-width: 64em) {
-
-  // Custom Scroll bar
-  ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6/16em rgba(0,0,0,0.3);
-      background-color: #fff;
-  }
-
-  ::-webkit-scrollbar-track-piece {
-      background-color: #f0f0f0;
-  }
-
-  ::-webkit-scrollbar {
-      width: 12/16em;
-      background-color: #F5F5F5;
-  }
-
-  ::-webkit-scrollbar-thumb {
-      border-radius: 10/16em;
-      background: var(--primary);
-  }
-
-  // On Scroll Transitions
-  body.scroll {
-      #navigation {  
-          .background-color-div {
-              height: 100%;
-              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-          }
-
-          .logo {
-              .light {
-                  display: none;
-              }
-
-              .dark {
-                  display: block;
-              }
-          }
-
-          #navbar-menu {
-              ul {
-                  li {
-                      a {
-                          color: #1a1a1a;
-                      }
-                  }
-              }
-          }
-      }
-
-      #dark-mode-toggle {
-          svg {
-              path {
-                  fill: #000;
-              }
-          }
-      }
-  }
-
-  body.dark-mode {
-      #navigation {
-          .background-color-div {
-              height: 100%;
-              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-          }
-      }
-  }
-
-  // Navigation Styles
-  #navigation {
-      width: 100%;
-      height: 100/16em;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 200000;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      background-color: #f8f8f8;
-      .background-color-div {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          background-color: #f8f8f8;
-
-          //transition properties
-          height: 0;
-          transition: height .3s;
-      }
-
-      .container {
-          //max-width: 1200/16em;
-          display: flex;
-          // Forces all elements to the right
-          justify-content: flex-end;
-          align-items: center;
-      }
-
-      // Logo
-      .logo {
-          // Margin-right: auto Pushes everything away from the right, nudging it to the left and pushing everyting to the right
-          margin-right: auto;
-          height: 60/16em;
-          width: auto;
-
+  #bottom-navigation {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    z-index: 10000;
+    height: auto;
+    background: white;
+    #bottom-navbar-menu{
+      ul{
+        display:flex;
+        justify-content: space-evenly;
+        font-size: 0px;
+        
+        li {
+          padding: 12px;
           img {
-              width: auto;
-              height: 100%;
+            width: 24px;
           }
+          list-style: none;
+        }
       }
-
-      // Navbar Menu
-      #navbar-menu {
-          ul {
-              padding: 0;
-              display: flex;
-              justify-content: flex-end;
-              align-items: center;
-
-              li {
-                  list-style: none;
-                  margin-left: 30/16em;
-                  padding-top: 3/16em;
-
-                  a {
-                      text-decoration: none;
-                      font-weight: bold;
-                      font-size: 19/16em;
-                      text-transform: uppercase;
-                      position: relative;
-                      z-index: 1;
-
-                      // Transiiton Properties
-                      color: var(--bodyText);
-                      transition: color .3s;
-
-                      &:before {
-                          content: '';
-                          position: absolute;
-                          display: block;
-                          height: 6/19em;
-                          border-radius: 3/19em;
-                          background: var(--primary);
-                          opacity: 1;
-                          bottom: 2/19em;
-                          z-index: -1;
-                          left: 0;
-      
-                          // transition properties
-                          width: 0%;
-                          transition: width .3s;
-                      }
-      
-                      &:hover {
-                          &:before {
-                              width: 100%;
-                          }
-                      }
-
-                      // Active State
-                      &.active {
-                          &:before {
-                              content: '';
-                              position: absolute;
-                              display: block;
-                              width: 100%;
-                              height: 6/19em;
-                              background: var(--primary);
-                              opacity: 1;
-                              bottom: 2/19em;
-                              border-radius: 3/19em;
-                              left: 0/19em;
-                              right: -6/19em;
-                              z-index: -1;
-
-                              // Transition Properties
-                              transition: bottom .3s;
-                          }
-                      }
-                  }
-              }
-          }
-      }
-
-      // Hamburger Menu
-      .hamburger-menu {
-          display: none;
-      }
+    }
   }
 }
+
+
 
 // ---------------------------------------------------------
 
@@ -660,7 +492,7 @@
       position: relative;
       z-index: 1;
       min-height: 100vh;
-      padding-top: 50/16em;
+      padding-top: 63/16em;
 
       &:before {
           content: '';
