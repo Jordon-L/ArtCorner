@@ -33,7 +33,7 @@ function upload() {
         console.log('good');
       } catch (err: any) {
         console.log(err.data);
-        message.innerHTML = `<p>Wrong Password</p>`;
+        message.innerHTML = `<p>Something went wrong</p>`;
       }
     }
   });
