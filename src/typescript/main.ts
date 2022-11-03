@@ -1,5 +1,4 @@
 import {setupNav} from './nav';
-import {closeAllModal} from './modal';
 
 import PocketBase from "pocketbase";
 

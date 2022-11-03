@@ -79,7 +79,7 @@ function updateImage(post : any){
 }
 
 function setupPopState(){
-  window.addEventListener('popstate', (e) => {
+  window.addEventListener('popstate', () => {
     closeAllModal();
   });
 }

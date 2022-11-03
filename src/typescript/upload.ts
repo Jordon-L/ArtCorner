@@ -71,7 +71,7 @@ function dropHandler(ev : any) {
 
   if (ev.dataTransfer.items) {
     // Use DataTransferItemList interface to access the file(s)
-    [...ev.dataTransfer.items].forEach((item, i) => {
+    [...ev.dataTransfer.items].forEach((item) => {
       // If dropped items aren't files, reject them
       if (item.kind === 'file') {
         const file = item.getAsFile();
@@ -81,7 +81,7 @@ function dropHandler(ev : any) {
     });
   } else {
     // Use DataTransfer interface to access the file(s)
-    [...ev.dataTransfer.files].forEach((file, i) => {
+    [...ev.dataTransfer.files].forEach((file) => {
       filesToUpload  = file;
     });
   }

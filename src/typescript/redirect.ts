@@ -23,7 +23,7 @@ if (item != null && params != null) {
   if (code != null) {
     client.users
       .authViaOAuth2(provider.name, code, provider.codeVerifier, redirectUrl)
-      .then((authData) => {
+      .then(() => {
         if (content != null) {
           window.location.href="index.html";
           content.innerText = "Login Successful. Redirecting to Home";
