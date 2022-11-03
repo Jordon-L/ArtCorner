@@ -40,6 +40,9 @@ function upload() {
 }
 
 function loadFile(file : File){
+  const inputs = document.querySelectorAll(".input-group");
+  inputs[0].classList.add("none");
+  inputs[1].classList.remove("none");
   let reader = new FileReader();
   let preview = document.querySelector('#myimage') as HTMLImageElement;
 
@@ -59,7 +62,7 @@ function loadFile(file : File){
 function dropHandler(ev : any) {
   console.log('File(s) dropped');
   const fileHTML = document.getElementById("file") as HTMLInputElement | null;
-  const inputs = document.querySelectorAll(".input-group");
+  
   if(fileHTML == null){
     return;
   }
@@ -73,19 +76,13 @@ function dropHandler(ev : any) {
       if (item.kind === 'file') {
         const file = item.getAsFile();
         filesToUpload  = file;
-        console.log(inputs);
-        inputs[0].classList.add("none");
-        inputs[1].classList.remove("none");
         loadFile(file);
       }
     });
   } else {
     // Use DataTransfer interface to access the file(s)
     [...ev.dataTransfer.files].forEach((file, i) => {
-      console.log(file);
       filesToUpload  = file;
-      inputs[0].classList.add("none");
-      inputs[1].classList.remove("none");
     });
   }
 }
@@ -99,12 +96,24 @@ function dragOverHandler(ev: any) {
 
 function setupFileUpload(){
   const zone = document.querySelector(".drop-zone") as HTMLInputElement | null;
+  const input = document.querySelector("#file") as HTMLInputElement | null;
   if(zone == null){
     return;
   }
   console.log('test');
   zone.addEventListener("drop", dropHandler);
   zone.addEventListener("dragover", dragOverHandler);
+  input?.addEventListener("input", (ev) => {
+    let fileInput = (ev.target as HTMLInputElement | null);
+    if(fileInput != null){
+      let file = fileInput.files;
+      if(file != null){
+        console.log('testing')
+        loadFile(file[0]);
+      }
+    }
+    
+  });
 }
 
 setupFileUpload();

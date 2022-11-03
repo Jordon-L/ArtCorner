@@ -133,12 +133,23 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .trending .gallery picture {
-    display: block;
+  .trending .gallery .image {
+    display: inherit;
   }
-  .trending .gallery picture img {
+  .trending .gallery .image .image-info {
+    display: none;
+  }
+  .trending .gallery .image:hover + .image-info {
+    display: block;
+    color: red;
+  }
+  .trending .gallery .image img {
     width: 100%;
     object-fit: cover;
+  }
+  #target-image {
+    width: 100%;
+    display: inherit;
   }
 }
 @media only screen and (min-width: 640px) {

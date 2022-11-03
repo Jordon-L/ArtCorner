@@ -150,14 +150,26 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      picture {
-        display: block;
+      .image {
+        display: inherit;
+        .image-info{
+          display:none;
+        }
+        
+        &:hover + .image-info {
+          display: block;
+          color: red;
+        }
         img {
           width: 100%;
           object-fit: cover;
         }
       }
     }
+  }
+  #target-image{
+    width:100%;
+    display: inherit;
   }
 }
 

@@ -1,4 +1,6 @@
 import {setupNav} from './nav';
+import {closeAllModal} from './modal';
+
 import PocketBase from "pocketbase";
 
 const client = new PocketBase("https://www.pocketbase.jordonlee.com");
@@ -18,7 +20,7 @@ function loggedIn(){
     loginNav.innerHTML = "Logout"
     if(hero != null && trending != null){
       hero.style.display = "none";
-      trending.style.paddingTop = "63px"; 
+      trending.style.paddingTop = "4em"; 
     }
   }
 
@@ -34,10 +36,18 @@ function loggedIn(){
 
   });
 
-  uploadNav.addEventListener("click", async (e) => {
+  uploadNav.addEventListener("click", (e) => {
     e.preventDefault();
     if(client.authStore.token.length != 0){
-      window.location.href="upload.html";
+      let modal = "modal-upload";
+      let component = null;
+      if(modal != null){
+        component = document.getElementById(modal);
+        window.location.href="upload.html";
+      }
+      if(component != null){
+        component.style.display = "flex";
+      }
     }
     else{
       window.location.href="login.html";
@@ -45,7 +55,7 @@ function loggedIn(){
 
   }); 
 
-  profileNav.addEventListener("click", async (e) => {
+  profileNav.addEventListener("click", (e) => {
     e.preventDefault();
     if(client.authStore.token.length != 0){
       window.location.href="profile.html";

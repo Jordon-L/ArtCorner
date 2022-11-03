@@ -1,35 +1,36 @@
-@import "root.less";
 
 @media only screen and (min-width: 0em) {
 .form-input {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
     .card {
-      display:flex;
       background: #fff;
-      height: 100%;
-      justify-content: center;
     }
     .drop-zone {
-      border-radius: var(--border-radius);
+      border-radius: 6px;
       display:flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       width: 100%;
       width: 306/16em;
       height:500/16em;
+      border: 2px solid;
     }
 }
 #form {
   .input-group {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
     .image-preview {
-      align-self: center;
-      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100vw;
+      max-width: 600/16em;
+      min-height: 100vw;
+      background-color: black;
       #myimage {
-        width: 100%;
-        max-width: 800/16em;
-        object-fit: contain;
       }
     }
 
@@ -52,10 +53,6 @@
       }
     }
   }
-  .last-step {
-    width: 100%;
-    justify-content: space-evenly;
-  }
   .none {
     display: none;
   }
@@ -68,21 +65,17 @@
     .drop-zone {
       display:flex;
       flex-direction: column;
-      justify-content: center;
       width: 768/16em;
       height:500/16em;
     }
 }
   #form{
-    .last-step {
-        flex-direction: row;
-    }
-    .image-preview {
-      #myimage{
-        height: 100%;
-        max-width: 400/16em;
+    .input-group{
+      .image-preview {
+        min-height: 600/16em;
       }
     }
+
   }
 
 }

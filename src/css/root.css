@@ -4,7 +4,7 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #FFCC00;
+    --primary: #ffcc00;
     --primaryShade: #ffd675;
     --primaryDark: #805d0d;
     --bodyText: #1a1a1a;
@@ -88,7 +88,7 @@
     width: 100%;
   }
   .button-solid:before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 100%;
@@ -150,7 +150,8 @@
     width: 96%;
   }
   #navigation .logo {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     height: 1.875em;
     width: auto;
   }
@@ -159,7 +160,7 @@
     height: 100%;
   }
   #navigation .logo .light {
-    display: none;
+    display: block;
   }
   #navigation .logo .dark {
     display: block;
@@ -188,7 +189,7 @@
     transition: background-color 0.3s;
   }
   #navigation .hamburger-menu span:before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 2px;
@@ -200,7 +201,7 @@
     transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
   }
   #navigation .hamburger-menu span:after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 2px;
@@ -236,7 +237,7 @@
     overflow: hidden;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: #f8f8f8;
-    top: 3.9375em;
+    top: 3.75em;
     padding-top: 0;
     height: 0;
     transition: height 0.3s, padding-top 0.3s, top 0.3s;
@@ -280,7 +281,7 @@
     font-weight: bold;
   }
   #navigation #navbar-menu ul li a.active:before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 0.42105263em;
@@ -308,7 +309,7 @@
     width: 100%;
     z-index: 10000;
     height: auto;
-    background: white;
+    background: #fff;
   }
   #bottom-navigation #bottom-navbar-menu ul {
     display: flex;
@@ -321,6 +322,9 @@
   }
   #bottom-navigation #bottom-navbar-menu ul li img {
     width: 24px;
+  }
+  .nav-padding {
+    padding-top: 3.75em;
   }
 }
 /* Dark Mode Mobile */
@@ -394,7 +398,7 @@
     padding-top: 3.9375em;
   }
   .int-hero:before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 100%;
@@ -440,6 +444,54 @@
     margin-bottom: 1.66666667em;
     display: block;
   }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    padding-top: 3.75em;
+  }
+  .modal .card {
+    background: #fff;
+  }
+  .modal .card .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+    max-width: 37.5em;
+    min-height: 100vw;
+    background-color: black;
+  }
+  .modal .card .post-title {
+    padding: 0.3125em;
+    display: flex;
+  }
+  .modal .card .post-title .back-button {
+    display: flex;
+    border: none;
+    background-color: transparent;
+  }
+  .modal .card .post-title .title {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 0.3125em;
+  }
+  .modal .card .post-title .spacer {
+    width: 2.25em;
+  }
+  .modal-button {
+    background: none;
+    border: none;
+    font-size: 0px;
+  }
 }
 /* Tablet */
 @media only screen and (min-width: 48em) {
@@ -448,6 +500,9 @@
   }
   .int-hero h1 {
     font-size: 4em;
+  }
+  .modal .card .image {
+    min-height: 37.5em;
   }
 }
 /* Small Desktop */
@@ -466,7 +521,7 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
   #footer {
-    background: #1C1C1C;
+    background: #1c1c1c;
     padding: 5.25em 0 1.25em;
     font-size: min(4vw, 1.2em);
   }
@@ -554,12 +609,12 @@
     position: relative;
   }
   #footer .right-section .lists ul h2:before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 0.11111111em;
     width: 5.38888889em;
-    background: #EEBE76;
+    background: #eebe76;
     opacity: 1;
     bottom: -0.88888889em;
     left: 0;
@@ -646,7 +701,7 @@
     position: relative;
   }
   #footer .right-section .lists ul li a:before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 0.11111111em;
