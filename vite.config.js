@@ -16,6 +16,8 @@ export default defineConfig({
         create: resolve(root, 'create-account.html'),
         login: resolve(root, 'login.html'),
         gallery: resolve(root, 'gallery.html'),
+        upload: resolve(root, 'upload.html'),
+        post: resolve(root, 'post.html'),
       }
     } 
   }
