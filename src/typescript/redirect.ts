@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 
 const client = new PocketBase("https://www.pocketbase.jordonlee.com");
-const redirectUrl = "http://127.0.0.1:5173/redirect.html";
+const redirectUrl = "https://quiet-blini-0ba17a.netlify.app/redirect.html";
 
 // parse the query parameters from the redirected url
 const queryString = window.location.search;
