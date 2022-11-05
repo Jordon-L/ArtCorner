@@ -35,7 +35,6 @@
     <link rel="stylesheet" href="/css/local.css" />
     <link rel="stylesheet" href="/css/critical.css" />
     <link rel="stylesheet" href="/css/form.css" />
-    <link rel="stylesheet" href="/css/upload.css" />
 
     <title>Art Corner | Home</title>
   </head>
@@ -68,7 +67,7 @@
           <img
             class="light"
             aria-hidden="true"
-            src="/images/logo.png"
+            src="../images/logo.png"
             decoding="async"
             alt="logo"
             width="221"
@@ -95,35 +94,48 @@
     </div>
 
     <main>
-
-      <section class="form-input nav-padding">
-          <form id="form" method="post" encType="multipart/form-data">
-            <div class="input-group drop-zone">
-              <img src = "icons/image-add.svg" alt="image-add"/>
-              <label>Drag and drop image</label>
-              <input id="file" aria-label="file" style="visibility:hidden" class="input-field" name="file" placeholder="file" type="file" accept="image/png, image/jpeg, image/jpg, image/gif" tabindex="1" required>
-              <label for="file" class="button-solid">Select from computer</label>
-            </div>
-            <div class="input-group none last-step">
-              <div class="image-preview">
-                <img id="myimage">
+      <section class="int-hero form-input">
+        <div class="card">
+          <div class="card-left">
+            <div id ="overlay-text">
+              <div>
+                <h1>Join the Community</h1>
+                <p>Explore art, connect with others, learn and become better.</p>
               </div>
-              <div class="text-input">
+            </div>
+          </div>
+          <div class="card-right">
+            <h2>Enter User name</h2>
+            <form id="form" method="post">
+              <div class="input-group">
+                <label for:="email">User name</label>
                 <div class=input-box>
-                  <input id="title" aria-label="title" class="input-field" name="title" placeholder="Title (required)" type="text" tabindex="1" pattern="[A-Za-z0-9_ ]{3,15}" required>
-                  
+                  <input id="username" aria-label="username" class="input-field" name="username" type="text"
+                    tabindex="1" required>
                 </div>
-                <textarea id="summary" aria-label="summary" class="input-field" rows="8" placeholder="Write a caption (optional)"></textarea>
-                <div id="message"></div>
-                <button name="submit" type="submit" id="upload-submit" class="button-solid" data-submit="...Sending">Upload</button>
+                <span id="message-email"></span>
               </div>
-            </div>
-          </form>
+                <p class="form-submit">
+                  <button name="submit" type="submit" id="user-submit" class="button-solid" data-submit="...Sending">Submit</button>
+                </p>
+              </form>
+              </div>
+          </div>
+        </div>
         
-      </div>
+        <picture>
+          <source media="(max-width: 600px)" srcset="../images/login-m.jpg" />
+          <source media="(min-width: 601px)" srcset="../images/login.jpg" />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="../images/login.jpg"
+            alt="new login"
+          />
+        </picture>
       </section>
     </main>
     <script type="module" src="/typescript/main.ts"></script>
-    <script type="module" src="/typescript/upload.ts"></script>
+    <script type="module" src="/typescript/account.ts"></script>
   </body>
 </html>

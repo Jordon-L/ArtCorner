@@ -3,25 +3,29 @@ import PocketBase from "pocketbase";
 const client = new PocketBase("https://www.pocketbase.jordonlee.com");
 
 function setupAccountCreate() {
-  const createButton = document.getElementById("create-submit");
-  const message = document.getElementById("message");
-  if (createButton == undefined || message == undefined) {
+  const createForm = document.getElementById("form");
+  const messageEmail = document.getElementById("message-email");
+  const messagePass = document.getElementById("message-pass");
+  const messageUser = document.getElementById("message-user");
+  if (createForm  == undefined || messagePass == undefined || messageEmail == undefined || messageUser == undefined) {
     return;
   }
 
-  createButton.addEventListener("click", async (e) => {
+  createForm.addEventListener("submit", async (e) => {
+    
     e.preventDefault();
 
     const email = document.getElementById("email") as HTMLInputElement | null;
+    const username = document.getElementById("username") as HTMLInputElement | null;
     const password = document.getElementById(
       "password"
     ) as HTMLInputElement | null;
     const passwordConfirm = document.getElementById(
-      "passwordConfirm"
+      "confirm-password"
     ) as HTMLInputElement | null;
-
-    if (email != null && password != null && passwordConfirm != null) {
+    if (email != null && password != null && passwordConfirm != null && username != null) {
       // create user
+      
       try {
         const user = await client.users.create({
           email: email.value,
@@ -29,22 +33,35 @@ function setupAccountCreate() {
           passwordConfirm: passwordConfirm.value,
         });
         if (user.profile == null) {
+          console.log('c')
           return;
         }
+        //login
+        await client.users.authViaEmail(
+          email.value,
+          password.value
+        );
         // set user profile data
         await client.records.update("profiles", user.profile.id, {
-          name: "test",
+          name: username.value,
         });
 
         // send verification email
-        await client.users.requestVerification(user.email);
+        //await client.users.requestVerification(user.email);
+        window.location.href="index.html";
       } catch (err: any) {
+        console.log(err)
         if (err.data.data.passwordConfirm != null) {
-          message.innerHTML = `<p>${err.data.data.passwordConfirm?.message}</p>`;
+          messagePass.innerHTML = `<p>${err.data.data.passwordConfirm?.message}</p>`;
         } else if (err.data.data.email != null) {
-          message.innerHTML = `<p>${err.data.data.email?.message}</p>`;
+          messageEmail.innerHTML = `<p>${err.data.data.email?.message}</p>`;
         } else if (err.data.data.password != null) {
-          message.innerHTML = `<p>${err.data.data.password?.message}</p>`;
+          messagePass.innerHTML = `<p>${err.data.data.password?.message}</p>`;
+        } else if(err.data.data.name != null) {
+          messageUser.innerHTML = `<p>${err.data.data.name?.message}</p>`
+        }
+        else{
+          console.log(err)
         }
       }
     }
@@ -81,6 +98,7 @@ function setupLogin() {
 }
 
 function googleLogin(){
+  const url = 'https://www.pocketbase.jordonlee.com'
   const googleButton = document.getElementById("google-login");
 
   googleButton?.addEventListener("click", async (e) => {

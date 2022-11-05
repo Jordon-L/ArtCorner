@@ -1,5 +1,4 @@
 function setupModal(){
-
   window.onclick = function (event) {
     if(event.target == null){
       return;
@@ -14,7 +13,9 @@ function setupModal(){
 
 function modalBackButton(){
   let backButtons = document.querySelectorAll(".back-button");
-  console.log(backButtons);
+  if(backButtons == null){
+    return;
+  }
   backButtons.forEach((e) => {
     e.addEventListener("click", () => {
       let modal = e.closest(".modal") as Element;
