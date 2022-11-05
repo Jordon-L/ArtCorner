@@ -54,11 +54,11 @@
         <!--Bottom Nav-->
         <nav id="bottom-navbar-menu">
           <ul>
-            <li><a href="/"><img src = "icons/home.svg" alt="home"/>Home</a></li>
-            <li><a href="/gallery.html"><img src = "icons/explore.svg" alt="explore"/>Gallery</a></li>
-            <li><button id="upload-nav" class ="modal-button"><img src = "icons/plus-square.svg" alt="add"/>Upload</button></li>
-            <li><a href="/profile.html"><img src = "icons/user.svg" alt="profile"/>Profile</a></li>
-            <li><a><img src = "icons/bell.svg" alt="profile"/>Notifications</a></li>
+            <li><a href="/"><img class="icon" src = "icons/home.svg" alt="home"/>Home</a></li>
+            <li><a href="/gallery.html"><img class="icon" src = "icons/explore.svg" alt="explore"/>Gallery</a></li>
+            <li><button id="upload-nav" class ="modal-button"><img class="icon" src = "icons/plus-square.svg" alt="add"/>Upload</button></li>
+            <li><a href="/profile.html"><img class="icon" src = "icons/user.svg" alt="profile"/>Profile</a></li>
+            <li><a><img class="icon" src = "icons/bell.svg" alt="profile"/>Notifications</a></li>
           </ul>
         </nav>
     </div>
@@ -67,22 +67,29 @@
       <div id="modal-gallery">
         <div class="card">
           <div class="post-title">
-            <button class="post-back"><img src="icons/chevron-left.svg"></button>
-            <h3 class="title">Post</h3>
+            <button class="post-back"><img class="icon" src="icons/chevron-left.svg"></button>
+            <h3 class="post">Post</h3>
             <div class="spacer"></div>
           </div>
           <div class="author">
-            <h4>Username</h4>
+            <picture>
+              <img id="profile-image" class="icon" src='/icons/user-circle.svg' alt="profile-image">
+            </picture>     
+            <div class="author-name">
+              <a>Username</a>
+            </div>       
+            
           </div>
           <div class="image">
-            <picture >
+            <picture>
               <source class="sm-image" media="(max-width: 799px)"/>
               <source class="lg-image" media="(min-width: 800px)"/>
               <img id="target-image" alt="target-image">
             </picture>
           </div>
-          <div class="info">
-            test
+          <div class="image-info">
+            <h2 class="title">Title</h2>
+            <p class="summary"></p> 
           </div>
         </div>
       </div>      

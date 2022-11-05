@@ -1,54 +1,13 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
-  #modal-gallery {
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+  main{
     overflow: auto;
-    justify-content: center;
-    .card {
-      background: #fff;
-      .image {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 100vw;
-        max-width: 600/16em;
-        min-height: 100vw;
-        background-color: black;
-      }
-      .post-title {
-        padding: 5/16em;
-        .back-button {
-          display:flex;
-          border: none;
-          background-color: transparent;
-        }
-        .title {
-          flex-grow: 1;
-          text-align: center;
-          padding-top: 5/16em;
-        }
-        .spacer {
-          width: 36/16em;
-        }
-
-        display: flex;
-      }
-    }
   }
-}
-
-@media only screen and (min-width: 48em) {
   #modal-gallery {
-    .card {
-      .image {
-        min-height: 600/16em;
-      }
+  .post-back {
+      display:flex;
+      border: none;
+      background-color: transparent;
     }
   }
 }

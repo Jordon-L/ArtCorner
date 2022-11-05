@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 
 const client = new PocketBase("https://www.pocketbase.jordonlee.com");
-const redirectUrl = "https://quiet-blini-0ba17a.netlify.app/redirect.html";
+const redirectUrl = "http://127.0.0.1:5173/redirect.html";
 
 // parse the query parameters from the redirected url
 const queryString = window.location.search;
@@ -19,13 +19,16 @@ if (item != null && params != null) {
 
   const content = document.getElementById("content");
   const code = params.get("code");
+  console.log(code);
+  console.log(provider.codeVerifier);
   // authenticate
   if (code != null) {
     client.users
       .authViaOAuth2(provider.name, code, provider.codeVerifier, redirectUrl)
-      .then(() => {
+      .then((e) => {
         if (content != null) {
-          window.location.href="index.html";
+          console.log(e);
+          window.location.href="/";
           content.innerText = "Login Successful. Redirecting to Home";
         }
       })

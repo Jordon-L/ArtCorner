@@ -18,14 +18,23 @@
     <meta property="og:image:secure_url" content="" />
 
     <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="/favicons/favicon-32x32.png?v1"
     />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
     <link rel="manifest" href="/favicons/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
@@ -57,23 +66,18 @@
       </div>
       <div class="container">
         <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
-        <a
-          class="logo"
-          aria-label="click to go to home page"
-          href="/"
-        >
-          <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-          <img
-            class="light"
-            aria-hidden="true"
-            src="/images/logo.png"
-            decoding="async"
-            alt="logo"
-            width="221"
-            height="66"
-          />
-        </a>
-
+        <div class="nav-logo">
+          <a class="logo" aria-label="click to go to home page" href="/">
+            <img
+              aria-hidden="true"
+              src="/images/logo.png"
+              decoding="async"
+              alt="logo"
+              width="83"
+              height="34"
+            />
+          </a>
+        </div>
         <!--Main Nav-->
         <nav id="navbar-menu">
           <ul>
@@ -93,16 +97,44 @@
     </div>
 
     <div id="bottom-navigation">
-        <!--Bottom Nav-->
-        <nav id="bottom-navbar-menu">
-          <ul>
-            <li><a href="/"><img src = "icons/home.svg" alt="home"/>Home</a></li>
-            <li><a href="/gallery.html"><img src = "icons/explore.svg" alt="explore"/>Gallery</a></li>
-            <li><button id="upload-nav" class ="modal-button"><img src = "icons/plus-square.svg" alt="add"/>Upload</button></li>
-            <li><a href="/profile.html"><img src = "icons/user.svg" alt="profile"/>Profile</a></li>
-            <li><a><img src = "icons/bell.svg" alt="profile"/>Notifications</a></li>
-          </ul>
-        </nav>
+      <!--Bottom Nav-->
+      <nav id="bottom-navbar-menu">
+        <ul>
+          <li>
+            <a href="/"
+              ><img class="icon" src="icons/home.svg" alt="home" />Home</a
+            >
+          </li>
+          <li>
+            <a href="/gallery.html"
+              ><img
+                class="icon"
+                src="icons/explore.svg"
+                alt="explore"
+              />Gallery</a
+            >
+          </li>
+          <li>
+            <button id="upload-nav" class="modal-button">
+              <img class="icon" src="icons/plus-square.svg" alt="add" />Upload
+            </button>
+          </li>
+          <li>
+            <a href="/profile.html"
+              ><img class="icon" src="icons/user.svg" alt="profile" />Profile</a
+            >
+          </li>
+          <li>
+            <a
+              ><img
+                class="icon"
+                src="icons/bell.svg"
+                alt="profile"
+              />Notifications</a
+            >
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <main>
@@ -113,16 +145,9 @@
       <section id="hero">
         <div class="hero-content">
           <div class="heroText">
-            <h1 id="home-h">
-              Showcase your portfolio
-            </h1>
-            <p>
-              Share, Socialize, Communities, Challenges
-            </p>
-            <a
-              class="button-solid"
-              href="/create-account.html"
-            >
+            <h1 id="home-h">Showcase your portfolio</h1>
+            <p>Share, Socialize, Communities, Challenges</p>
+            <a class="button-solid" href="/create-account.html">
               Create Account
             </a>
           </div>
@@ -134,40 +159,50 @@
             aria-hidden="true"
             decoding="async"
             src="/images/landing.jpg"
-            alt="new home"
+            alt="landing page"
           />
         </picture>
       </section>
 
       <section class="trending">
         <h2>Newest</h2>
-        <div class="gallery">
-
-        </div>
+        <div class="gallery"></div>
       </section>
     </main>
-    
+
     <div class="modal-content">
       <div id="modal-gallery" class="nav-padding modal">
         <div class="card">
           <div class="post-title">
-            <button class="back-button"><img src="icons/chevron-left.svg"></button>
-            <h3 class="title">Post</h3>
+            <button class="back-button">
+              <img class="icon" src="icons/chevron-left.svg" />
+            </button>
+            <h3 class="post">Post</h3>
             <div class="spacer"></div>
           </div>
           <div class="author">
-            <h4>Username</h4>
+            <picture>
+              <img
+                id="profile-image"
+                class="icon"
+                src="/icons/user-circle.svg"
+                alt="profile-image"
+              />
+            </picture>
+            <div class="author-name">
+              <a>Username</a>
+            </div>
           </div>
           <div class="image">
-            <picture >
-              <source class="sm-image" media="(max-width: 799px)"/>
-              <source class="lg-image" media="(min-width: 800px)"/>
-              <img id="target-image" alt="target-image">
+            <picture>
+              <source class="sm-image" media="(max-width: 799px)" />
+              <source class="lg-image" media="(min-width: 800px)" />
+              <img id="target-image" alt="target-image" />
             </picture>
-            
           </div>
-          <div class="info">
-            test
+          <div class="image-info">
+            <h2 class="title">Title</h2>
+            <p class="summary"></p>
           </div>
         </div>
       </div>

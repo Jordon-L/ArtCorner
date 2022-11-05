@@ -14,5 +14,14 @@ async function getPost(){
   }
 }
 
+function postBackButton(){
+  let backButtons = document.querySelectorAll(".post-back");
+  backButtons.forEach((e) => {
+    e.addEventListener("click", () => {
+      window.location.href = '/';
+    });
+  });
+}
 
+postBackButton()
 getPost();

@@ -111,20 +111,28 @@
               <div class="input-group">
                 <label for:="email">Email</label>
                 <div class=input-box>
-                  <input id="email" aria-label="email" class="input-field" name="email" type="text"
+                  <input id="email" aria-label="email" class="input-field" name="email" type="email"
                     tabindex="1" required>
                 </div>
-                <span></span>
+                <span id="message-email"></span>
+              </div>
+              <div class="input-group">
+                <label for:="username">User name</label>
+                <div class=input-box>
+                  <input id="username" aria-label="username" class="input-field" name="username" type="text"
+                    tabindex="1" required>
+                </div>
+                <span id="message-user"></span>
               </div>
               <div class="input-group">
                 <label for:="password">Password</label>
                 <input id="password" aria-label="password" class="input-field" name="password" type="password" tabindex="1" required>
-                <span id="message"></span>
+                <span></span>
               </div>
               <div class="input-group">
                 <label for:="confirm-password">Confirm Password</label>
                 <input id="confirm-password" aria-label="confirm-password" class="input-field" name="confirm-password" type="password" tabindex="1" required>
-                <span id="message"></span>
+                <span id="message-pass"></span>
               </div>
                 <p class="form-submit">
                   <button name="submit" type="submit" id="create-submit" class="button-solid" data-submit="...Sending">Submit</button>
