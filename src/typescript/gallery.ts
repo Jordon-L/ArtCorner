@@ -78,16 +78,18 @@ async function updateImage(post : any){
     title.innerHTML = post["title"];
     summary.innerHTML = post["summary"];
     if(profile != null){
-      let author = document.querySelector(".author") as HTMLElement;
-      let avatar = author.querySelector(".author > picture > #profile-image") as HTMLImageElement;
-      let text = author.querySelector(".author > .author-name > a") as HTMLElement;
+
+      let authorList = document.querySelectorAll(".author") as NodeList;
+      authorList.forEach((e) => {
+        let author = e as  HTMLElement;
+        let avatar = author.querySelector(".author > picture > #profile-image") as HTMLImageElement;
+        let text = author.querySelector(".author > .author-name > a") as HTMLElement;
+        text.innerHTML = profile.items[0].name;
       
-      text.innerHTML = profile.items[0].name;
-      
-      if(profile.items[0].avatar != ""){
-        avatar.src = profile.items[0].avatar;
-      }
-      
+        if(profile.items[0].avatar != ""){
+          avatar.src = profile.items[0].avatar;
+        }
+      });
     }
     if(smImage != null){
       smImage.srcset = `${baseURL}?thumb=400x400f`;

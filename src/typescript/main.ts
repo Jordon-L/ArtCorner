@@ -38,26 +38,17 @@ function loggedIn(){
   uploadNav.addEventListener("click", (e) => {
     e.preventDefault();
     if(client.authStore.token.length != 0){
-      let modal = "modal-upload";
-      let component = null;
-      if(modal != null){
-        component = document.getElementById(modal);
-        window.location.href="upload.html";
-      }
-      if(component != null){
-        component.style.display = "flex";
-      }
+      window.location.href="upload.html";
     }
     else{
       window.location.href="login.html";
     }
 
   }); 
-
   profileNav.addEventListener("click", (e) => {
     e.preventDefault();
     if(client.authStore.token.length != 0){
-      window.location.href="profile.html";
+      window.location.href=`profile.html?id=${client.authStore.model?.id}`;
     }
     else{
       window.location.href="login.html";

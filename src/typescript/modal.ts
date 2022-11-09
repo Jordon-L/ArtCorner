@@ -12,7 +12,7 @@ function setupModal(){
 }
 
 function modalBackButton(){
-  let backButtons = document.querySelectorAll(".back-button");
+  let backButtons = document.querySelectorAll(".back");
   if(backButtons == null){
     return;
   }

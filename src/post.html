@@ -1,101 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="canonical" href="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <link rel="canonical" href="" />
 
-    <!--Social Media Display-->
-    <meta property="og:title" content="Art Corner" />
-    <meta property="og:description" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:secure_url" content="" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicons/favicon-32x32.png?v1"
-    />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="/favicons/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+  <!--Social Media Display-->
+  <meta property="og:title" content="Art Corner" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:secure_url" content="" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/root.css" />
-    <link rel="stylesheet" href="/css/local.css" />
-    <link rel="stylesheet" href="/css/critical.css" />
-    <link rel="stylesheet" href="/css/post.css" />
+  <!--Favicons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v1" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/favicons/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
 
-    <title>Art Corner | Post</title>
-  </head>
-  <body>
-    <!--Screen reader skip main nav-->
-    <a class="skip" aria-label="skip to main content" href="#main"
-      >Click To Skip To Main Content</a
-    >
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/root.css" />
+  <link rel="stylesheet" href="/css/local.css" />
+  <link rel="stylesheet" href="/css/critical.css" />
+  <link rel="stylesheet" href="/css/post.css" />
 
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
+  <title>Art Corner | Post</title>
+</head>
 
-    <div id="navigation">
+<body>
+  <!--Screen reader skip main nav-->
+  <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+  <!-- ============================================ -->
+  <!--                 Navigation                   -->
+  <!-- ============================================ -->
+
+  <div id="navigation">
 
     <div id="bottom-navigation">
-        <!--Bottom Nav-->
-        <nav id="bottom-navbar-menu">
-          <ul>
-            <li><a href="/"><img class="icon" src = "icons/home.svg" alt="home"/>Home</a></li>
-            <li><a href="/gallery.html"><img class="icon" src = "icons/explore.svg" alt="explore"/>Gallery</a></li>
-            <li><button id="upload-nav" class ="modal-button"><img class="icon" src = "icons/plus-square.svg" alt="add"/>Upload</button></li>
-            <li><a href="/profile.html"><img class="icon" src = "icons/user.svg" alt="profile"/>Profile</a></li>
-            <li><a><img class="icon" src = "icons/bell.svg" alt="profile"/>Notifications</a></li>
-          </ul>
-        </nav>
+      <!--Bottom Nav-->
+      <nav id="bottom-navbar-menu">
+        <ul>
+          <li><a href="/"><img class="icon" src="icons/home.svg" alt="home" />Home</a></li>
+          <li><a href="/gallery.html"><img class="icon" src="icons/explore.svg" alt="explore" />Gallery</a></li>
+          <li><button id="upload-nav" class="modal-button"><img class="icon" src="icons/plus-square.svg"
+                alt="add" />Upload</button></li>
+          <li><a href="/profile.html"><img class="icon" src="icons/user.svg" alt="profile" />Profile</a></li>
+          <li><a><img class="icon" src="icons/bell.svg" alt="profile" />Notifications</a></li>
+        </ul>
+      </nav>
     </div>
-
+  </div>
     <main>
-      <div id="modal-gallery">
-        <div class="card">
-          <div class="post-title">
-            <button class="post-back"><img class="icon" src="icons/chevron-left.svg"></button>
-            <h3 class="post">Post</h3>
-            <div class="spacer"></div>
-          </div>
-          <div class="author">
-            <picture>
-              <img id="profile-image" class="icon" src='/icons/user-circle.svg' alt="profile-image">
-            </picture>     
-            <div class="author-name">
-              <a>Username</a>
-            </div>       
-            
-          </div>
-          <div class="image">
-            <picture>
-              <source class="sm-image" media="(max-width: 799px)"/>
-              <source class="lg-image" media="(min-width: 800px)"/>
-              <img id="target-image" alt="target-image">
-            </picture>
-          </div>
-          <div class="image-info">
-            <h2 class="title">Title</h2>
-            <p class="summary"></p> 
+      <div>
+        <div id="modal-gallery">
+          <div class="card">
+            <div class="top-title">
+              <button class="back"><img class="icon" src="icons/chevron-left.svg"></button>
+              <h3 class="post">Post</h3>
+              <div class="spacer"></div>
+            </div>
+            <div class="author">
+              <picture>
+                <img id="profile-image" class="icon" src='/icons/user-circle.svg' alt="profile-image">
+              </picture>
+              <div class="author-name">
+                <a>Username</a>
+              </div>
+            </div>
+            <div class="image">
+              <picture>
+                <source class="sm-image" media="(max-width: 799px)" />
+                <source class="lg-image" media="(min-width: 800px)" />
+                <img id="target-image" alt="target-image">
+              </picture>
+            </div>
+            <div class="image-info">
+              <div class="author">
+                <picture>
+                  <img id="profile-image" class="icon" src="/icons/user-circle.svg" alt="profile-image" />
+                </picture>
+                <div class="author-name">
+                  <a>Username</a>
+                </div>
+              </div>
+              <h2 class="title">Title</h2>
+              <p class="summary"></p>
+            </div>
           </div>
         </div>
-      </div>      
+      </div>
     </main>
     <script type="module" src="/typescript/main.ts"></script>
     <script type="module" src="/typescript/modal.ts"></script>
     <script type="module" src="/typescript/post.ts"></script>
-  </body>
+</body>
+
 </html>

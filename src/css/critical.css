@@ -125,21 +125,14 @@
   .nav-margin {
     margin-top: 6.25em;
   }
-  .trending .gallery {
+  .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .trending .gallery .image {
+  .gallery .image {
     display: inherit;
   }
-  .trending .gallery .image .image-info {
-    display: none;
-  }
-  .trending .gallery .image:hover + .image-info {
-    display: block;
-    color: red;
-  }
-  .trending .gallery .image img {
+  .gallery .image img {
     width: 100%;
     object-fit: cover;
   }
@@ -164,9 +157,35 @@
   .modal .card {
     background: #fff;
   }
+  .top-title {
+    background: white;
+    position: fixed;
+    width: 100%;
+    max-width: 48em;
+    padding: 0.625em;
+    display: flex;
+    border-bottom: 1px solid var(--divider);
+  }
+  .top-title .back {
+    display: flex;
+    border: none;
+    background-color: transparent;
+  }
+  .top-title .post {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 0.3125em;
+  }
+  .top-title .spacer {
+    width: 2em;
+  }
+  .modal-button {
+    background: none;
+    border: none;
+    font-size: 0px;
+  }
   #modal-gallery .card {
     max-width: 48em;
-    border-radius: var(--border-radius);
     overflow: auto;
     height: fit-content;
   }
@@ -179,87 +198,92 @@
     min-height: 100vw;
     background-color: black;
   }
-  #modal-gallery .post-title {
-    padding: 0.625em;
-    display: flex;
-    border-bottom: 1px solid var(--divider);
-  }
-  #modal-gallery .post-title .back-button {
-    display: flex;
-    border: none;
-    background-color: transparent;
-  }
-  #modal-gallery .post-title .post {
-    flex-grow: 1;
-    text-align: center;
-    padding-top: 0.3125em;
-  }
-  #modal-gallery .post-title .spacer {
-    width: 2em;
-  }
-  #modal-gallery .author {
-    display: flex;
-    padding: 0.9375em;
-  }
-  #modal-gallery .author a {
-    padding-left: 0.625em;
-  }
   #modal-gallery .image-info {
     padding: 1.25em;
     padding-bottom: 4.375em;
+  }
+  #modal-gallery .image-info .author {
+    display: none;
   }
   #modal-gallery .image-info .title {
     font-size: 36px;
     padding-bottom: 0.55555556em;
   }
-  .modal-button {
-    background: none;
-    border: none;
-    font-size: 0px;
+  .card .author {
+    display: flex;
+    padding: 0.9375em;
+    padding-top: 4.375em;
+  }
+  .card .author a {
+    padding-left: 0.625em;
   }
 }
 @media only screen and (min-width: 48em) {
+  .top-title {
+    display: none;
+  }
+  #modal-gallery {
+    align-items: center;
+  }
+  #modal-gallery .card {
+    display: flex;
+    max-width: unset;
+  }
   #modal-gallery .image {
     min-height: 48em;
   }
+  #modal-gallery .author {
+    display: none;
+  }
+  #modal-gallery .author .icon {
+    width: 2em;
+  }
+  #modal-gallery .image-info {
+    width: 31.25em;
+  }
+  #modal-gallery .image-info .author {
+    display: flex;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 }
 @media only screen and (min-width: 640px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media only screen and (min-width: 992px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 @media only screen and (min-width: 1200px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 @media only screen and (min-width: 1440px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(6, 1fr);
   }
 }
 @media only screen and (min-width: 1680px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(7, 1fr);
   }
 }
 @media only screen and (min-width: 1920px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(8, 1fr);
   }
 }
 @media only screen and (min-width: 2200px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(9, 1fr);
   }
 }
 @media only screen and (min-width: 2560px) {
-  .trending .gallery {
+  .gallery {
     grid-template-columns: repeat(10, 1fr);
   }
 }

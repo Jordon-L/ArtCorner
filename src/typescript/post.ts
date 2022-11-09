@@ -15,7 +15,7 @@ async function getPost(){
 }
 
 function postBackButton(){
-  let backButtons = document.querySelectorAll(".post-back");
+  let backButtons = document.querySelectorAll(".back");
   backButtons.forEach((e) => {
     e.addEventListener("click", () => {
       window.location.href = '/';

@@ -83,8 +83,6 @@
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
-
-            <li><a id="profile-nav" href="/profile.html">Profile</a></li>
             <li><a id="login-nav" href="/login.html">Log in</a></li>
           </ul>
         </nav>
@@ -115,12 +113,12 @@
             >
           </li>
           <li>
-            <button id="upload-nav" class="modal-button">
+            <a href="/upload.html" id="upload-nav">
               <img class="icon" src="icons/plus-square.svg" alt="add" />Upload
-            </button>
+            </a>
           </li>
           <li>
-            <a href="/profile.html"
+            <a id="profile-nav" href="/profile.html"
               ><img class="icon" src="icons/user.svg" alt="profile" />Profile</a
             >
           </li>
@@ -173,8 +171,8 @@
     <div class="modal-content">
       <div id="modal-gallery" class="nav-padding modal">
         <div class="card">
-          <div class="post-title">
-            <button class="back-button">
+          <div class="top-title">
+            <button class="back">
               <img class="icon" src="icons/chevron-left.svg" />
             </button>
             <h3 class="post">Post</h3>
@@ -201,6 +199,19 @@
             </picture>
           </div>
           <div class="image-info">
+            <div class="author">
+              <picture>
+                <img
+                  id="profile-image"
+                  class="icon"
+                  src="/icons/user-circle.svg"
+                  alt="profile-image"
+                />
+              </picture>
+              <div class="author-name">
+                <a>Username</a>
+              </div>
+            </div>
             <h2 class="title">Title</h2>
             <p class="summary"></p>
           </div>
