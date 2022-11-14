@@ -49,18 +49,63 @@
     <!-- ============================================ -->
 
     <div id="navigation">
-
-    <div id="bottom-navigation">
-        <!--Bottom Nav-->
-        <nav id="bottom-navbar-menu">
-          <ul>
-            <li><a href="/"><img class="icon" src = "icons/home.svg" alt="home"/>Home</a></li>
-            <li><a href="/gallery.html"><img class="icon" src = "icons/explore.svg" alt="explore"/>Gallery</a></li>
-            <li><button id="upload-nav" class ="modal-button"><img class="icon" src = "icons/plus-square.svg" alt="add"/>Upload</button></li>
-            <li><a href="/profile.html"><img class="icon" src = "icons/user.svg" alt="profile"/>Profile</a></li>
-            <li><a><img class="icon" src = "icons/bell.svg" alt="profile"/>Notifications</a></li>
-          </ul>
-        </nav>
+      <div aria-hidden="true" class="background-color-div">
+        <!--This div is used to overcome a z-index issue where the open
+                  #navbar-menu is on top of the #navigation. This bar places itself 
+                  the #navbar-menu so that menu appears behind the #navigation
+              -->
+      </div>
+      <div class="container">
+        <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
+        <div class="nav-logo">
+          <a class="logo" aria-label="click to go to home page" href="/">
+            <img aria-hidden="true" src="/images/logo2.svg" decoding="async" alt="logo" width="82" height="34" />
+          </a>     
+        </div>
+        <!--Main Nav-->
+        <div id="bottom-navigation">
+          <!--Bottom Nav-->
+          <nav id="navbar-menu">
+            <ul>
+              <li>
+                <a href="/">
+                  <img class="icon" src="icons/home.svg" alt="home" />
+                  <h3>Home</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/gallery.html">
+                  <img class="icon" src="icons/explore.svg" alt="explore" />
+                  <h3>Gallery</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/upload.html" id="upload-nav">
+                  <img class="icon" src="icons/plus-square.svg" alt="add" />
+                  <h3>Upload</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/profile.html" id="profile-nav">
+                  <img class="icon" src="icons/user.svg" alt="profile" />
+                  <h3>Profile</h3>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <img class="icon" src="icons/bell.svg" alt="profile" />
+                  <h3>Notifications</h3>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <a href="/login.html" class="login-nav button-solid">Log in</a>
+        <!--Mobile Nav toggle-->
+        <button class="hamburger-menu">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
 
     <main>

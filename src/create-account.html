@@ -52,40 +52,56 @@
     <div id="navigation">
       <div aria-hidden="true" class="background-color-div">
         <!--This div is used to overcome a z-index issue where the open
-                #navbar-menu is on top of the #navigation. This bar places itself 
-                the #navbar-menu so that menu appears behind the #navigation
-            -->
+                  #navbar-menu is on top of the #navigation. This bar places itself 
+                  the #navbar-menu so that menu appears behind the #navigation
+              -->
       </div>
       <div class="container">
         <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
-        <a
-          class="logo"
-          aria-label="click to go to home page"
-          href="/index.html"
-        >
-          <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-          <img
-            class="light"
-            aria-hidden="true"
-            src="../images/logo.png"
-            decoding="async"
-            alt="logo"
-            width="221"
-            height="66"
-          />
-        </a>
-
+        <div class="nav-logo">
+          <a class="logo" aria-label="click to go to home page" href="/">
+            <img aria-hidden="true" src="/images/logo2.svg" decoding="async" alt="logo" width="82" height="34" />
+          </a>     
+        </div>
         <!--Main Nav-->
-        <nav id="navbar-menu">
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/gallery.html">Gallery</a></li>
-            <li><a id="upload-nav" href="/upload.html">Upload</a></li>
-            <li><a id="profile-nav" href="/profile.html">Profile</a></li>
-            <li><a id="login-nav" href="/login.html">Log in</a></li>
-          </ul>
-        </nav>
-
+        <div id="bottom-navigation">
+          <!--Bottom Nav-->
+          <nav id="navbar-menu">
+            <ul>
+              <li>
+                <a href="/">
+                  <img class="icon" src="icons/home.svg" alt="home" />
+                  <h3>Home</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/gallery.html">
+                  <img class="icon" src="icons/explore.svg" alt="explore" />
+                  <h3>Gallery</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/upload.html" id="upload-nav">
+                  <img class="icon" src="icons/plus-square.svg" alt="add" />
+                  <h3>Upload</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/profile.html" id="profile-nav">
+                  <img class="icon" src="icons/user.svg" alt="profile" />
+                  <h3>Profile</h3>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <img class="icon" src="icons/bell.svg" alt="profile" />
+                  <h3>Notifications</h3>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <a href="/login.html" class="login-nav button-solid">Log in</a>
         <!--Mobile Nav toggle-->
         <button class="hamburger-menu">
           <span aria-hidden="true"></span>
