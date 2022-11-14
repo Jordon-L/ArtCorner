@@ -132,6 +132,9 @@
   .gallery .image {
     display: inherit;
   }
+  .gallery .image:hover {
+    cursor: pointer;
+  }
   .gallery .image img {
     width: 100%;
     object-fit: cover;

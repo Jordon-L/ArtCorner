@@ -153,6 +153,16 @@
   .icon {
     width: 32px;
   }
+  .login-nav {
+    position: absolute;
+    border: none;
+    z-index: 100;
+    display: block;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    transition: top 0.3s;
+  }
   .hamburger-menu {
     display: none;
   }
