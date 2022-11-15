@@ -187,11 +187,6 @@
     padding: 10/16em;
     display: flex;
     border-bottom: 1px solid var(--divider);
-    .back {
-      display: flex;
-      border: none;
-      background-color: transparent;
-    }
     .post {
       flex-grow: 1;
       text-align: center;
@@ -200,11 +195,6 @@
     .spacer {
       width: 32/16em;
     }
-  }
-  .modal-button {
-    background: none;
-    border: none;
-    font-size: 0px;
   }
   #modal-gallery {
     .card {
@@ -231,6 +221,11 @@
         font-size: 36px;
         padding-bottom: 20/36em;
       }
+    }
+    .back {
+      display: flex;
+      border: none;
+      background-color: transparent;
     }
   }
 
@@ -272,6 +267,10 @@
         display: flex;
         padding-left:0px;
         padding-top:0px;
+        .back {
+          flex-grow:1;
+          justify-content: flex-end;
+        }
       }
     }
   }

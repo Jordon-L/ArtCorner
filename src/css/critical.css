@@ -169,11 +169,6 @@
     display: flex;
     border-bottom: 1px solid var(--divider);
   }
-  .top-title .back {
-    display: flex;
-    border: none;
-    background-color: transparent;
-  }
   .top-title .post {
     flex-grow: 1;
     text-align: center;
@@ -181,11 +176,6 @@
   }
   .top-title .spacer {
     width: 2em;
-  }
-  .modal-button {
-    background: none;
-    border: none;
-    font-size: 0px;
   }
   #modal-gallery .card {
     max-width: 48em;
@@ -211,6 +201,11 @@
   #modal-gallery .image-info .title {
     font-size: 36px;
     padding-bottom: 0.55555556em;
+  }
+  #modal-gallery .back {
+    display: flex;
+    border: none;
+    background-color: transparent;
   }
   .card .author {
     display: flex;
@@ -248,6 +243,10 @@
     display: flex;
     padding-left: 0px;
     padding-top: 0px;
+  }
+  #modal-gallery .image-info .author .back {
+    flex-grow: 1;
+    justify-content: flex-end;
   }
 }
 @media only screen and (min-width: 640px) {

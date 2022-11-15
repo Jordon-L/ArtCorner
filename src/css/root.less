@@ -172,6 +172,12 @@
         li {
           padding: 12px;
           list-style: none;
+
+          a {
+            h3 {
+              align-self: flex-end;
+            }
+          }
         }
       }
     }
@@ -182,15 +188,8 @@
   .icon {
     width: 32px;
   }
-  .login-nav{
-    position: absolute;
-    border: none;
-    z-index: 100;
+  #login-nav{
     display: block;
-    top: 50%;
-    right: 0%;
-    transform: translateY(-50%);
-    transition: top 0.3s; 
   }
   .hamburger-menu {
     display: none;
@@ -198,14 +197,16 @@
 
   #navigation {
     background-color: #f8f8f8;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     .container {
+      display:flex;
       padding: (13/16em) 0;
     }
     // Logo
     .nav-logo {
-      display: flex;
-      justify-content: center;
-      height: 40/16em;
+      font-size: 14/16em;
+      height: 50/14em;
+      flex-grow: 1;
     }
     .logo {
       img {
@@ -226,6 +227,13 @@
 /* Desktop */
 @media only screen and (min-width: 64em) {
   //Navigation Styles
+  .icon {
+    font-size:16px;
+    width: 50/16em;
+  }
+  .nav-padding {
+    padding-top: 80/16em;
+  }
   #navigation {
     position: fixed;
     top: 0;
@@ -234,77 +242,18 @@
     z-index: 10000;
     height: auto;
 
-    .background-color-div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #f8f8f8;
-      width: 100%;
-      height: 100%;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-
     .container {
       padding: (13/16em) 0;
       width: 96%;
     }
-
+    .nav-logo {
+      margin-left: 30/16em;
+    }
     // Hamburger Menu Default State
     .hamburger-menu {
-      position: absolute;
       border: none;
-      height: 48/16em;
-      width: 48/16em;
-      z-index: 100;
       display: block;
       background: transparent;
-      padding: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: top 0.3s;
-
-      span {
-        height: 2px;
-        width: 30/16em;
-        background-color: #000;
-        display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-
-        //transition properties
-        transition: background-color 0.3s;
-
-        &:before {
-          content: "";
-          position: absolute;
-          display: block;
-          height: 2px;
-          width: 80%;
-          background: #000;
-          opacity: 1;
-          top: -6px;
-          left: 0;
-
-          //transition properties
-          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
-        }
-
-        &:after {
-          content: "";
-          position: absolute;
-          display: block;
-          height: 2px;
-          width: 80%;
-          background: #000;
-          opacity: 1;
-          top: 6px;
-          left: 0;
-
-          //transition properties
-          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
-        }
-      }
     }
 
     // Hamburger Menu Open State
@@ -338,7 +287,7 @@
       overflow: hidden;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       background-color: #f8f8f8;
-      top: 60/16em; // same as #navigation height
+      top: 76/16em; // same as #navigation height
 
       //Transition Properties
       padding-top: 0;
@@ -409,7 +358,7 @@
 
     // Navbar Menu Open State
     #navbar-menu.open {
-      height: 480px;
+      height: 550px;
       padding-top: 18/16em;
       z-index: -100;
 
