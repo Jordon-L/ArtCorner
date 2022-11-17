@@ -1,170 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="" />
 
-  <link rel="canonical" href="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+    <!--Social Media Display-->
+    <meta property="og:title" content="Art Corner" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
 
-  <!--Social Media Display-->
-  <meta property="og:title" content="Art Corner" />
-  <meta property="og:description" content="" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:image:secure_url" content="" />
+    <!--Favicons-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png?v1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <!--Favicons-->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v1" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-  <link rel="manifest" href="/favicons/site.webmanifest" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#ffffff" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/root.css" />
+    <link rel="stylesheet" href="/css/local.css" />
+    <link rel="stylesheet" href="/css/critical.css" />
+    <link rel="stylesheet" href="/css/upload.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/root.css" />
-  <link rel="stylesheet" href="/css/local.css" />
-  <link rel="stylesheet" href="/css/critical.css" />
-  <link rel="stylesheet" href="/css/upload.css" />
+    <title>Art Corner | Home</title>
+  </head>
 
-  <title>Art Corner | Home</title>
-</head>
+  <body>
+    <!--Screen reader skip main nav-->
+    <a class="skip" aria-label="skip to main content" href="#main"
+      >Click To Skip To Main Content</a
+    >
 
-<body>
-  <!--Screen reader skip main nav-->
-  <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
-
-  <!-- ============================================ -->
-  <!--                 Navigation                   -->
-  <!-- ============================================ -->
-
-  <div id="navigation">
-    <div class="container">
-      <!--Mobile Nav toggle-->
-      <button class="hamburger-menu">
-        <img class="icon" src="icons/menu.svg" alt="menu" />
-      </button>        
-      <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
-      <div class="nav-logo">
-
-        <a class="logo" aria-label="click to go to home page" href="/">
-          <img aria-hidden="true" src="/images/logo2.svg" decoding="async" alt="logo" width="82" height="34" />
-        </a>     
-      </div>
-
-      <!--Main Nav-->
-      <div id="bottom-navigation">
-        <!--Bottom Nav-->
-        <nav id="navbar-menu">
-          <ul>
-            <li>
-              <a href="/">
-                <img class="icon" src="icons/home.svg" alt="home" />
-                <h3>Home</h3>
-              </a>
-            </li>
-            <li>
-              <a href="/upload.html" id="upload-nav">
-                <img class="icon" src="icons/plus-square.svg" alt="add" />
-                <h3>Upload</h3>
-              </a>
-            </li>
-            <li>
-              <a href="/profile.html" id="profile-nav">
-                <img class="icon" src="icons/user.svg" alt="profile" />
-                <h3>Profile</h3>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <a href="/login.html" id="login-nav" class="button-solid">Log in</a>
-
-    </div>
-  </div>
-
-
-
-  <main>
     <!-- ============================================ -->
-    <!--                    LANDING                   -->
+    <!--                 Navigation                   -->
     <!-- ============================================ -->
 
-    <section id="hero">
-      <div class="hero-content">
-        <div class="heroText">
-          <h1 id="home-h">Showcase your portfolio</h1>
-          <p>Share, Socialize, Communities, Challenges</p>
-          <a class="button-solid" href="/create-account.html">
-            Create Account
+    <div id="navigation">
+      <div class="container">
+        <!--Mobile Nav toggle-->
+        <button class="hamburger-menu">
+          <img class="icon" src="icons/menu.svg" alt="menu" />
+        </button>
+        <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
+        <div class="nav-logo">
+          <a class="logo" aria-label="click to go to home page" href="/">
+            <img
+              aria-hidden="true"
+              src="/images/logo2.svg"
+              decoding="async"
+              alt="logo"
+              width="82"
+              height="34"
+            />
           </a>
         </div>
-      </div>
-      <picture>
-        <source media="(max-width: 600px)" srcset="/images/landing-m.jpg" />
-        <source media="(min-width: 601px)" srcset="/images/landing.jpg" />
-        <img aria-hidden="true" decoding="async" src="/images/landing.jpg" alt="landing page" />
-      </picture>
-    </section>
 
-    <section class="trending">
-      <h2>Newest</h2>
-      <div class="gallery"></div>
-    </section>
-  </main>
-
-  <div class="modal-content">
-    <div id="modal-gallery" class="nav-padding modal">
-      <div class="card">
-        <div class="top-title">
-          <button class="back">
-            <img class="icon" src="icons/chevron-left.svg" />
-          </button>
-          <h3 class="post">Post</h3>
-          <div class="spacer"></div>
+        <!--Main Nav-->
+        <div id="bottom-navigation">
+          <!--Bottom Nav-->
+          <nav id="navbar-menu">
+            <ul>
+              <li>
+                <a href="/">
+                  <img class="icon" src="icons/home.svg" alt="home" />
+                  <h3>Home</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/upload.html" id="upload-nav">
+                  <img class="icon" src="icons/plus-square.svg" alt="add" />
+                  <h3>Upload</h3>
+                </a>
+              </li>
+              <li>
+                <a href="/profile.html" id="profile-nav">
+                  <img class="icon" src="icons/user.svg" alt="profile" />
+                  <h3>Profile</h3>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div class="author">
-          <picture>
-            <img id="profile-image" class="icon" src="/icons/user-circle.svg" alt="profile-image" />
-          </picture>
-          <div class="author-name">
-            <a>Username</a>
+        <a href="/login.html" id="login-nav" class="button-solid">Log in</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- ============================================ -->
+      <!--                    LANDING                   -->
+      <!-- ============================================ -->
+
+      <section id="hero">
+        <div class="hero-content">
+          <div class="heroText">
+            <h1 id="home-h">Showcase your portfolio</h1>
+            <p>Share, Socialize, Communities, Challenges</p>
+            <a class="button-solid" href="/create-account.html">
+              Create Account
+            </a>
           </div>
         </div>
-        <div class="image">
-          <picture>
-            <source class="sm-image" media="(max-width: 799px)" />
-            <source class="lg-image" media="(min-width: 800px)" />
-            <img id="target-image" alt="target-image" />
-          </picture>
-        </div>
-        <div class="image-info">
+        <picture>
+          <source media="(max-width: 600px)" srcset="/images/landing-m.jpg" />
+          <source media="(min-width: 601px)" srcset="/images/landing.jpg" />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/images/landing.jpg"
+            alt="landing page"
+          />
+        </picture>
+      </section>
+
+      <section class="trending">
+        <h2>Newest</h2>
+        <div class="gallery"></div>
+      </section>
+    </main>
+
+    <div class="modal-content">
+      <div id="modal-gallery" class="nav-padding modal">
+        <div class="card">
+          <div class="top-title">
+            <button class="back">
+              <img class="icon" src="icons/chevron-left.svg" />
+            </button>
+            <h3 class="post">Post</h3>
+            <div class="spacer"></div>
+          </div>
           <div class="author">
             <picture>
-              <img id="profile-image" class="icon" src="/icons/user-circle.svg" alt="profile-image" />
+              <img
+                id="profile-image"
+                class="icon"
+                src="/icons/user-circle.svg"
+                alt="profile-image"
+              />
             </picture>
             <div class="author-name">
               <a>Username</a>
             </div>
-            <button class="back">
-              <img class="icon" src="icons/close.svg" />
-            </button>
           </div>
-          <h2 class="title">Title</h2>
-          <p class="summary"></p>
+          <div class="image">
+            <picture>
+              <source class="sm-image" media="(max-width: 799px)" />
+              <source class="lg-image" media="(min-width: 800px)" />
+              <img id="target-image" alt="target-image" />
+            </picture>
+          </div>
+          <div class="image-info">
+            <div class="author">
+              <picture>
+                <img
+                  id="profile-image"
+                  class="icon"
+                  src="/icons/user-circle.svg"
+                  alt="profile-image"
+                />
+              </picture>
+              <div class="author-name">
+                <a>Username</a>
+              </div>
+              <button class="back">
+                <img class="icon" src="icons/close.svg" />
+              </button>
+            </div>
+            <h2 class="title">Title</h2>
+            <p class="summary"></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script type="module" src="/typescript/main.ts"></script>
-  <script type="module" src="/typescript/modal.ts"></script>
-  <script type="module" src="/typescript/gallery.ts"></script>
-  <script type="module" src="/typescript/upload.ts"></script>
-</body>
-
+    <script type="module" src="/typescript/main.ts"></script>
+    <script type="module" src="/typescript/modal.ts"></script>
+    <script type="module" src="/typescript/gallery.ts"></script>
+    <script type="module" src="/typescript/upload.ts"></script>
+  </body>
 </html>
