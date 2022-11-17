@@ -19,7 +19,7 @@ function loggedIn(){
     loginNav.innerHTML = "Logout"
     if(hero != null && trending != null){
       hero.style.display = "none";
-      trending.style.paddingTop = "4em"; 
+      trending.classList.add("nav-padding"); 
     }
   }
 

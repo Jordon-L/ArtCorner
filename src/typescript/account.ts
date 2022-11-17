@@ -33,7 +33,6 @@ function setupAccountCreate() {
           passwordConfirm: passwordConfirm.value,
         });
         if (user.profile == null) {
-          console.log('c')
           return;
         }
         //login
@@ -80,7 +79,6 @@ function setupLogin() {
 
     const email = document.getElementById("email") as HTMLInputElement | null;
     const password = document.getElementById("password") as HTMLInputElement | null;
-    console.log(email, password);
     if (email != null && password != null) {
       try {
         // user authentication via email/pass
@@ -105,7 +103,6 @@ function googleLogin(){
     e.preventDefault();
     let result = await client.users.listAuthMethods();
     let googleInfo = result["authProviders"][0];
-    console.log(googleInfo);
     localStorage.setItem("provider", JSON.stringify(googleInfo));
     try{
       window.location.href = `${googleInfo.authUrl}http://127.0.0.1:5173/redirect.html`;  

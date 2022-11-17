@@ -17,7 +17,6 @@ function upload() {
     const title = document.getElementById("title") as HTMLInputElement | null;
     const summary = document.getElementById("summary") as HTMLInputElement | null;
     const file = document.getElementById("file") as HTMLInputElement | null;
-    console.log('good');
     if (title != null && summary != null && file != null) {
       //check if title is 3 letters
       if(title.value.length > 3){
@@ -77,7 +76,7 @@ function loadFile(file : File){
 }
 
 function dropHandler(ev : any) {
-  console.log('File(s) dropped');
+
   const fileHTML = document.getElementById("file") as HTMLInputElement | null;
   
   if(fileHTML == null){
@@ -104,7 +103,6 @@ function dropHandler(ev : any) {
 }
 
 function dragOverHandler(ev: any) {
-  console.log('File(s) in drop zone');
 
   // Prevent default behavior (Prevent file from being opened)
   ev.preventDefault();
@@ -117,7 +115,6 @@ function setupFileUpload(){
   if(zone == null){
     return;
   }
-  console.log('test');
   zone.addEventListener("drop", dropHandler);
   zone.addEventListener("dragover", dragOverHandler);
   input?.addEventListener("input", (ev) => {
@@ -125,7 +122,6 @@ function setupFileUpload(){
     if(fileInput != null){
       let file = fileInput.files;
       if(file != null){
-        console.log('testing')
         loadFile(file[0]);
       }
     }

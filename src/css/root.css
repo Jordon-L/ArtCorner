@@ -150,9 +150,6 @@
   #bottom-navigation #navbar-menu ul li a h3 {
     align-self: flex-end;
   }
-  .nav-padding {
-    padding-top: 3.75em;
-  }
   .icon {
     width: 32px;
   }

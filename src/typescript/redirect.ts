@@ -19,8 +19,6 @@ if (item != null && params != null) {
 
   const content = document.getElementById("content");
   const code = params.get("code");
-  console.log(code);
-  console.log(provider.codeVerifier);
   // authenticate
   if (code != null) {
     client.users

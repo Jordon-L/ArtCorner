@@ -74,12 +74,6 @@
                 </a>
               </li>
               <li>
-                <a href="/gallery.html">
-                  <img class="icon" src="icons/explore.svg" alt="explore" />
-                  <h3>Gallery</h3>
-                </a>
-              </li>
-              <li>
                 <a href="/upload.html" id="upload-nav">
                   <img class="icon" src="icons/plus-square.svg" alt="add" />
                   <h3>Upload</h3>
@@ -91,26 +85,19 @@
                   <h3>Profile</h3>
                 </a>
               </li>
-              <li>
-                <a>
-                  <img class="icon" src="icons/bell.svg" alt="profile" />
-                  <h3>Notifications</h3>
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
-        <a href="/login.html" id="" class="button-solid">Log in</a>
-  
+        <a href="/login.html" id="login-nav" class="button-solid">Log in</a>
       </div>
     </div>
 
     <main>
-      <div class="modal-gallery">
+      <div>
         <div class="card">
           <div class="top-title">
             <button class="back"><img class="icon" src="icons/chevron-left.svg"></button>
-            <h3 class="title">Author</h3>
+            <h3 class="content-name">Author</h3>
             <div class="spacer"></div>
           </div>
           <div class="author">
@@ -127,6 +114,50 @@
         </div>
       </div>      
     </main>
+    <div class="modal-content">
+      <div id="modal-gallery" class="nav-padding modal">
+        <div class="card">
+          <div class="top-title">
+            <button class="back">
+              <img class="icon" src="icons/chevron-left.svg" />
+            </button>
+            <h3 class="post">Post</h3>
+            <div class="spacer"></div>
+          </div>
+          <div class="author">
+            <picture>
+              <img id="profile-image" class="icon" src="/icons/user-circle.svg" alt="profile-image" />
+            </picture>
+            <div class="author-name">
+              <a>Username</a>
+            </div>
+          </div>
+          <div class="image">
+            <picture>
+              <source class="sm-image" media="(max-width: 799px)" />
+              <source class="lg-image" media="(min-width: 800px)" />
+              <img id="target-image" alt="target-image" />
+            </picture>
+          </div>
+          <div class="image-info">
+            <div class="author">
+              <picture>
+                <img id="profile-image" class="icon" src="/icons/user-circle.svg" alt="profile-image" />
+              </picture>
+              <div class="author-name">
+                <a>Username</a>
+              </div>
+              <button class="back">
+                <img class="icon" src="icons/close.svg" />
+              </button>
+            </div>
+            <h2 class="title">Title</h2>
+            <p class="summary"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/typescript/main.ts"></script>
     <script type="module" src="/typescript/profile.ts"></script>
   </body>

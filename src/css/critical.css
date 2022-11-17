@@ -169,13 +169,18 @@
     display: flex;
     border-bottom: 1px solid var(--divider);
   }
-  .top-title .post {
+  .top-title .content-name {
     flex-grow: 1;
     text-align: center;
     padding-top: 0.3125em;
   }
   .top-title .spacer {
     width: 2em;
+  }
+  .back {
+    display: flex;
+    border: none;
+    background-color: transparent;
   }
   #modal-gallery .card {
     max-width: 48em;
@@ -202,18 +207,17 @@
     font-size: 36px;
     padding-bottom: 0.55555556em;
   }
-  #modal-gallery .back {
-    display: flex;
-    border: none;
-    background-color: transparent;
-  }
   .card .author {
     display: flex;
     padding: 0.9375em;
     padding-top: 4.375em;
   }
-  .card .author a {
+  .card .author .author-name {
+    display: flex;
+  }
+  .card .author .author-name a {
     padding-left: 0.625em;
+    align-self: center;
   }
 }
 @media only screen and (min-width: 48em) {
@@ -247,6 +251,14 @@
   #modal-gallery .image-info .author .back {
     flex-grow: 1;
     justify-content: flex-end;
+  }
+  .card .author {
+    padding-top: 0.9375em;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .card .author {
+    padding-top: 5em;
   }
 }
 @media only screen and (min-width: 640px) {

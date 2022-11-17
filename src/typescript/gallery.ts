@@ -83,8 +83,9 @@ async function updateImage(post : any){
       authorList.forEach((e) => {
         let author = e as  HTMLElement;
         let avatar = author.querySelector(".author > picture > #profile-image") as HTMLImageElement;
-        let text = author.querySelector(".author > .author-name > a") as HTMLElement;
+        let text = author.querySelector(".author > .author-name > a") as HTMLLinkElement;
         text.innerHTML = profile.items[0].name;
+        text.href = `/profile.html?id=${post.author}`
       
         if(profile.items[0].avatar != ""){
           avatar.src = profile.items[0].avatar;
