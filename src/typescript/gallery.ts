@@ -46,7 +46,7 @@ async function setupGallery() {
       let index = parent.getAttribute("data-index-number");
       let post =  galleryList[Number(index)];
       if(index != null){
-        if(window.screen.width <= 768){
+        if(window.screen.width < 768){
           window.location.href = `/post.html?id=${post["id"]}`;
           return;
         }

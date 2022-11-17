@@ -111,7 +111,6 @@ function dragOverHandler(ev: any) {
 function setupFileUpload(){
   const zone = document.querySelector(".drop-zone") as HTMLInputElement | null;
   const input = document.querySelector("#file") as HTMLInputElement | null;
-  const title = document.getElementById('title');
   if(zone == null){
     return;
   }

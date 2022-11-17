@@ -19,6 +19,7 @@ export default defineConfig({
         gallery: resolve(root, 'gallery.html'),
         upload: resolve(root, 'upload.html'),
         post: resolve(root, 'post.html'),
+        profile: resolve(root, 'profile.html'),
       }
     } 
   },

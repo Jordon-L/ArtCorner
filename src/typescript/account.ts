@@ -105,7 +105,7 @@ function googleLogin(){
     let googleInfo = result["authProviders"][0];
     localStorage.setItem("provider", JSON.stringify(googleInfo));
     try{
-      window.location.href = `${googleInfo.authUrl}http://127.0.0.1:5173/redirect.html`;  
+      window.location.href = `${googleInfo.authUrl}${url}/redirect.html`;  
     }
     catch(err: any){
       console.log(err);
