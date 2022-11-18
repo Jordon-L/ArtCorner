@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 import {updateImage} from "./gallery"
 
 
-const client = new PocketBase("https://www.pocketbase.jordonlee.com");
+const client = new PocketBase("https://www.artcorner.jordonlee.com");
 
 let authorId = "" as string;
 

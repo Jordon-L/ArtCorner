@@ -1,6 +1,6 @@
 import PocketBase from "pocketbase";
 
-const client = new PocketBase("https://www.pocketbase.jordonlee.com");
+const client = new PocketBase("https://www.artcorner.jordonlee.com");
 
 function setupAccountCreate() {
   const createForm = document.getElementById("form");
@@ -96,7 +96,7 @@ function setupLogin() {
 }
 
 function googleLogin(){
-  const url = 'https://www.pocketbase.jordonlee.com'
+  const url = 'https://www.artcorner.jordonlee.com'
   const googleButton = document.getElementById("google-login");
 
   googleButton?.addEventListener("click", async (e) => {

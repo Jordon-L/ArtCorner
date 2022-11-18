@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-const client = new PocketBase('https://pocketbase.jordonlee.com');
+const client = new PocketBase('https://artcorner.jordonlee.com');
 
 let filesToUpload: Blob;
 let fileName = "image"
