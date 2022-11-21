@@ -1,5 +1,5 @@
 function setupModal(){
-  window.onclick = function (event) {
+  window.onclick = function (event : any) {
     if(event.target == null){
       return;
     }

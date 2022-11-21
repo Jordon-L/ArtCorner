@@ -5,27 +5,25 @@ let filesToUpload: Blob;
 let fileName = "image"
 
 function upload() {
+  const title = document.getElementById("title") as HTMLInputElement | null;
+  const summary = document.getElementById("summary") as HTMLInputElement | null;
+  const file = document.getElementById("file") as HTMLInputElement | null;
   const uploadButton = document.getElementById("form");
   const message = document.getElementById("message");
   if (uploadButton == undefined || message == undefined) {
     return;
   }
 
+
   uploadButton.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const title = document.getElementById("title") as HTMLInputElement | null;
-    const summary = document.getElementById("summary") as HTMLInputElement | null;
-    const file = document.getElementById("file") as HTMLInputElement | null;
     if (title != null && summary != null && file != null) {
-      //check if title is 3 letters
-      if(title.value.length > 3){
-
-      }
       try {
         const form = document.querySelector("form")!
         const formData = new FormData(form);
         formData.set("file", filesToUpload, fileName);
+        formData.set("summary", summary.value);
         if(client.authStore.model?.id != undefined){
           formData.append("author", client.authStore.model?.id);
         }

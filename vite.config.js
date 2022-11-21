@@ -20,6 +20,7 @@ export default defineConfig({
         upload: resolve(root, 'upload.html'),
         post: resolve(root, 'post.html'),
         profile: resolve(root, 'profile.html'),
+        redirect: resolve(root, 'redirect.html'),
       }
     } 
   },

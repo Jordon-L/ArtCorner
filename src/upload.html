@@ -110,7 +110,7 @@
               </div>
               <div class="text-input">
                 <div class=input-box>
-                  <input id="title" aria-label="title" class="input-field" name="title" placeholder="Title (required)" type="text" tabindex="1" pattern="[A-Za-z0-9_ ]{3,15}" required>
+                  <input id="title" oninvalid="this.setCustomValidity('Must be 3-30 characters long')" oninput="this.setCustomValidity('')" aria-label="title" class="input-field" name="title" placeholder="Title (required)" type="text" tabindex="1" pattern="[a-zA-Z0-9\s]{3,30}" required>
                   
                 </div>
                 <textarea id="summary" aria-label="summary" class="input-field" rows="8" placeholder="Write a caption (optional)"></textarea>
