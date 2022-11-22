@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 
-const client = new PocketBase("https://www.artcorner.jordonlee.com");
-const redirectUrl = "https://www.artcorner.jordonlee.com/redirect.html";
+const client = new PocketBase("https://artcorner.jordonlee.com");
+const redirectUrl = "https://artcorner.jordonlee.com/redirect.html";
 
 // parse the query parameters from the redirected url
 const queryString = window.location.search;

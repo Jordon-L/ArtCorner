@@ -2,7 +2,7 @@ import {setupNav} from './nav';
 
 import PocketBase from "pocketbase";
 
-const client = new PocketBase("https://www.artcorner.jordonlee.com");
+const client = new PocketBase("https://artcorner.jordonlee.com");
 
 //check if logged in
 function loggedIn(){

@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 import {updateImage} from "./gallery"
 
-const client = new PocketBase("https://www.artcorner.jordonlee.com");
+const client = new PocketBase("https://artcorner.jordonlee.com");
 let galleryList: any[] = [];
 
 async function getPost() {
@@ -32,7 +32,7 @@ function populateUserGallery(list: any) {
     for (let i = 0; i < list.totalItems; i++) {
       const post = list.items[i];
       html += `    <picture class="image" data-index-number=${length + i}>
-      <img src= https://www.artcorner.jordonlee.com/api/files/${
+      <img src= https://artcorner.jordonlee.com/api/files/${
         post["@collectionId"]
       }/${post["id"]}/${post["file"]}?thumb=200x200 alt=${post["title"]}>
       <div class="image-info"></div>

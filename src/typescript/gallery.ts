@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 import {closeAllModal} from "./modal";
 
-const client = new PocketBase("https://www.artcorner.jordonlee.com");
+const client = new PocketBase("https://artcorner.jordonlee.com");
 
 let galleryList: any[] = [];
 
@@ -24,7 +24,7 @@ async function setupGallery() {
     for(let i = 0; i < resultList.totalItems; i++){
       const post = resultList.items[i];
       html += `    <picture class="image" data-index-number=${length+i}>
-      <img src= https://www.artcorner.jordonlee.com/api/files/${post["@collectionId"]}/${post["id"]}/${post["file"]}?thumb=200x200 alt=${post["title"]}>
+      <img src= https://artcorner.jordonlee.com/api/files/${post["@collectionId"]}/${post["id"]}/${post["file"]}?thumb=200x200 alt=${post["title"]}>
       <div class="image-info"></div>
       </picture>` ;      
     }
@@ -72,7 +72,7 @@ async function updateImage(post : any){
     component.style.display = "flex";
     let smImage = document.querySelector(".sm-image") as HTMLSourceElement;
     let lgImage = document.querySelector(".lg-image") as HTMLSourceElement;
-    let baseURL = `https://www.artcorner.jordonlee.com/api/files/${post["@collectionId"]}/${post["id"]}/${post["file"]}`;
+    let baseURL = `https://artcorner.jordonlee.com/api/files/${post["@collectionId"]}/${post["id"]}/${post["file"]}`;
     let title = document.querySelector(".title") as HTMLElement;
     let summary = document.querySelector(".summary") as HTMLElement;
     title.innerHTML = post["title"];
