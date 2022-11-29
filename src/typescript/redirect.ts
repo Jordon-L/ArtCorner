@@ -21,7 +21,7 @@ if (item != null && params != null) {
   const code = params.get("code");
   // authenticate
   if (code != null) {
-    await pb.collection('users')
+    pb.collection('users')
       .authWithOAuth2(provider.name, code, provider.codeVerifier, redirectUrl, {
         'name': 'test',
       },)
