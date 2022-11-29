@@ -1,6 +1,6 @@
 import PocketBase from "pocketbase";
 
-const client = new PocketBase("https://artcorner.jordonlee.com");
+const pb = new PocketBase("https://artcorner.jordonlee.com");
 
 function setupAccountCreate() {
   const createForm = document.getElementById("form");
@@ -27,24 +27,21 @@ function setupAccountCreate() {
       // create user
       
       try {
-        const user = await client.users.create({
+        const user = await pb.collection('users').create({
           email: email.value,
           password: password.value,
           passwordConfirm: passwordConfirm.value,
+          name: username.value,
         });
+
         if (user.profile == null) {
           return;
         }
         //login
-        await client.users.authViaEmail(
+        await pb.collection('users').authWithPassword(
           email.value,
           password.value
         );
-        // set user profile data
-        await client.records.update("profiles", user.profile.id, {
-          name: username.value,
-        });
-
         // send verification email
         //await client.users.requestVerification(user.email);
         window.location.href="index.html";
@@ -82,7 +79,7 @@ function setupLogin() {
     if (email != null && password != null) {
       try {
         // user authentication via email/pass
-         await client.users.authViaEmail(
+        await pb.collection('users').authWithPassword(
           email.value,
           password.value
         );
@@ -101,7 +98,7 @@ function googleLogin(){
 
   googleButton?.addEventListener("click", async (e) => {
     e.preventDefault();
-    let result = await client.users.listAuthMethods();
+    const result = await pb.collection('users').listAuthMethods();
     let googleInfo = result["authProviders"][0];
     localStorage.setItem("provider", JSON.stringify(googleInfo));
     try{

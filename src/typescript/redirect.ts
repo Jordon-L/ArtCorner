@@ -1,6 +1,6 @@
 import PocketBase from "pocketbase";
 
-const client = new PocketBase("https://artcorner.jordonlee.com");
+const pb = new PocketBase("https://artcorner.jordonlee.com");
 const redirectUrl = "https://artcorner.jordonlee.com/redirect.html";
 
 // parse the query parameters from the redirected url
@@ -21,8 +21,10 @@ if (item != null && params != null) {
   const code = params.get("code");
   // authenticate
   if (code != null) {
-    client.users
-      .authViaOAuth2(provider.name, code, provider.codeVerifier, redirectUrl)
+    await pb.collection('users')
+      .authWithOAuth2(provider.name, code, provider.codeVerifier, redirectUrl, {
+        'name': 'test',
+      },)
       .then((e) => {
         if (content != null) {
           console.log(e);

@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-const client = new PocketBase('https://artcorner.jordonlee.com');
+const pb = new PocketBase('https://artcorner.jordonlee.com');
 
 let filesToUpload: Blob;
 let fileName = "image"
@@ -24,12 +24,12 @@ function upload() {
         const formData = new FormData(form);
         formData.set("file", filesToUpload, fileName);
         formData.set("summary", summary.value);
-        if(client.authStore.model?.id != undefined){
-          formData.append("author", client.authStore.model?.id);
+        if(pb.authStore.model?.id != undefined){
+          formData.append("author", pb.authStore.model?.id);
         }
         
 
-        await client.records.create('posts', formData);
+        await pb.collection('posts').create(formData);
         window.location.href="index.html";
       } catch (err: any) {
         console.log(err.data);

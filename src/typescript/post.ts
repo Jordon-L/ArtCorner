@@ -1,8 +1,8 @@
 import PocketBase from "pocketbase";
-import {updateImage} from "./gallery"
+import {updateImage} from "./utils"
 
 
-const client = new PocketBase("https://artcorner.jordonlee.com");
+const pb = new PocketBase("https://artcorner.jordonlee.com");
 
 let authorId = "" as string;
 
@@ -10,7 +10,7 @@ async function getPost(){
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get('id');
   if(id != null){
-    const post = await client.records.getOne('posts', id, {});
+    const post = await pb.collection('posts').getOne(`${id}`);
     authorId = post.author;
     updateImage(post);
   }

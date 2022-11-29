@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
-import {closeAllModal} from "./modal";
+import {updateImage} from "./utils"
 
-const client = new PocketBase("https://artcorner.jordonlee.com");
+const pb = new PocketBase("https://artcorner.jordonlee.com");
 
 let galleryList: any[] = [];
 
@@ -12,19 +12,17 @@ async function setupGallery() {
     return;
   }
 
-  const resultList = await client.records.getList('posts', 1, 50, {
-    sort: '-created,id',
-    filter: 'created >= "2022-01-01 00:00:00"',
+  const resultList = await pb.collection('posts').getList(1, 50, {
+    filter: 'created >= "2022-01-01 00:00:00" ',
+    sort: '-created'
   });
-
-  let length = galleryList.length;
 
   if(gallery != null){
     let html = "";
     for(let i = 0; i < resultList.totalItems; i++){
       const post = resultList.items[i];
-      html += `    <picture class="image" data-index-number=${length+i}>
-      <img src= https://artcorner.jordonlee.com/api/files/${post["@collectionId"]}/${post["id"]}/${post["file"]}?thumb=200x200 alt=${post["title"]}>
+      html += `    <picture class="image" data-index-number=${i}>
+      <img src= https://artcorner.jordonlee.com/api/files/${post["collectionId"]}/${post["id"]}/${post["file"]}?thumb=200x200 alt=${post["title"]}>
       <div class="image-info"></div>
       </picture>` ;      
     }
@@ -58,58 +56,5 @@ async function setupGallery() {
   })
 };
 
-async function updateImage(post : any){
-  const profile = await client.records.getList('profiles', 1, 5, {
-    filter: `userId = "${post.author}"`,
-  });
-  let modal = "modal-gallery";
-  let component = null;
-  if(modal != null){
-    component = document.getElementById(modal);
-  }
-  if(component != null){
 
-    component.style.display = "flex";
-    let smImage = document.querySelector(".sm-image") as HTMLSourceElement;
-    let lgImage = document.querySelector(".lg-image") as HTMLSourceElement;
-    let baseURL = `https://artcorner.jordonlee.com/api/files/${post["@collectionId"]}/${post["id"]}/${post["file"]}`;
-    let title = document.querySelector(".title") as HTMLElement;
-    let summary = document.querySelector(".summary") as HTMLElement;
-    title.innerHTML = post["title"];
-    summary.innerHTML = post["summary"];
-    if(profile != null){
-
-      let authorList = document.querySelectorAll(".author") as NodeList;
-      authorList.forEach((e) => {
-        let author = e as  HTMLElement;
-        let avatar = author.querySelector(".author > picture > #profile-image") as HTMLImageElement;
-        let text = author.querySelector(".author > .author-name > a") as HTMLLinkElement;
-        text.innerHTML = profile.items[0].name;
-        text.href = `/profile.html?id=${post.author}`
-      
-        if(profile.items[0].avatar != ""){
-          avatar.src = profile.items[0].avatar;
-        }
-      });
-    }
-    if(smImage != null){
-      smImage.srcset = `${baseURL}?thumb=400x400f`;
-    }
-    if(lgImage != null){
-      lgImage.srcset = `${baseURL}`;
-    }
-    if(window.location.href.indexOf("post.html") <= -1){
-      window.history.pushState({'post': true}, '', `/post.html?id=${post["id"]}`);
-    }
-    
-  }
-}
-
-function setupPopState(){
-  window.addEventListener('popstate', () => {
-    closeAllModal();
-  });
-}
 setupGallery();
-setupPopState();
-export {setupGallery, updateImage};
