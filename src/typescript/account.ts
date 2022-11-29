@@ -34,7 +34,7 @@ function setupAccountCreate() {
           name: username.value,
         });
 
-        if (user.profile == null) {
+        if (user == null) {
           return;
         }
         //login
